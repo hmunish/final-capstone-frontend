@@ -18,8 +18,7 @@ section.signup {
   background: var(--color-bg-1) url(./assets/cars-bg-home.png) center no-repeat;
   background-size: contain;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
   flex-direction: column;
   gap: 7px;
 }
@@ -35,28 +34,19 @@ section.signup > form {
   padding: 25px;
   border: none;
   outline: none;
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
+  border-bottom-left-radius: 11px;
   font-size: 16px;
 }
 
 .form-submit {
   height: 100%;
   padding: 15px;
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
   border: none;
   color: var(--color-white);
   cursor: pointer;
-  background-color: var(--color-bg-1);
-}
-
-.form-switch-question {
-  padding-top: 15px;
-  margin-left: 15%;
+  background-color: var(--color-bg-2);
 }
 
 .form-switch-link {
-  color: var(--color-bg-2);
-  margin-left: 15%;
+  color: var(--color-white);
 }
