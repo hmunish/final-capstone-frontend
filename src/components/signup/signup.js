@@ -4,12 +4,11 @@ function Signup() {
   return (
     <section className="signup">
       <form>
-        <input type="text" placeholder="Username" className="textInput" />
-        <input type="submit" value="Sign Up" />
+        <input type="text" placeholder="Username" className="text-input" />
+        <input type="submit" value="Sign Up" className="form-submit" />
       </form>
-      <p className="form-switch-question">Already a User ?</p>
       <Link className="form-switch-link" to="/signin">
-        Sign In
+        Already a user? Sign In
       </Link>
     </section>
   );

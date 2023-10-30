@@ -27,16 +27,15 @@ function Login() {
         <input
           type="text"
           placeholder="Username"
-          className="textInput"
+          className="text-input"
           name="username"
           required
         />
-        <input type="submit" value="Sign In" />
+        <input type="submit" value="Sign In" className="form-submit" />
       </form>
       {loginData.isNewLoginError && <p>{loginData.isNewLoginError}</p>}
-      <p className="form-switch-question">New User?</p>
       <Link to="/signup" className="form-switch-link">
-        Sign Up
+        New User? Sign Up
       </Link>
     </section>
   );
