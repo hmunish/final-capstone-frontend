@@ -1,0 +1,8 @@
+.navigation {
+  display: block;
+}
+
+.navlist {
+  display: flex;
+  flex-direction: column;
+}
