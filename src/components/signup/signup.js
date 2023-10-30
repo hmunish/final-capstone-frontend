@@ -7,8 +7,10 @@ function Signup() {
         <input type="text" placeholder="Username" className="textInput" />
         <input type="submit" value="Sign Up" />
       </form>
-      <p>Already a User ?</p>
-      <Link to="/signin">Sign In</Link>
+      <p className="form-switch-question">Already a User ?</p>
+      <Link className="form-switch-link" to="/signin">
+        Sign In
+      </Link>
     </section>
   );
 }
