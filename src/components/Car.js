@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../CSS/Car.module.css';
 
 const Car = ({
   name, image, description,
 }) => (
-  <div className="car">
+  <div className={styles.car}>
     <div>
-      <img src={image} alt={image} />
+      <img src={image} alt="car" />
     </div>
     <div>
       <p>

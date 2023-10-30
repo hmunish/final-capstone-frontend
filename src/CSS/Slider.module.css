@@ -1,0 +1,4 @@
+.prevnextbtns {
+  display: flex;
+  justify-content: space-between;
+}

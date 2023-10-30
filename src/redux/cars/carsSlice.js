@@ -6,7 +6,7 @@ const initialState = {
   isLoading: false,
   error: null,
   value: null,
-  length: 4,
+  length: null,
 };
 
 const url = 'http://localhost:3000/api/v1/users/1/cars';

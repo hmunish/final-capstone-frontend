@@ -23,8 +23,15 @@ const Cars = () => {
 
   return (
     <div>
+      <h2>
+        Cars Avaliable
+      </h2>
+      <p>
+        Please select a vehicle
+      </p>
       <p>
         Cars Listed:
+        {' '}
         {cars.length}
       </p>
 
