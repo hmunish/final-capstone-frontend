@@ -1,8 +1,28 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: azure;
+}
+
 .navigation {
-  display: block;
+  margin-top: 10rem;
 }
 
 .navlist {
   display: flex;
   flex-direction: column;
+  list-style-type: none;
+  gap: 2rem;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mobmenu {
+  display: block;
 }
