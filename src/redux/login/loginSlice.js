@@ -6,8 +6,7 @@ import {
   getLocalStorageAuth,
   setLocalStorageAuth,
 } from '../../utility/helper';
-
-const API_URL = 'http://localhost:3000/api/v1/login';
+import { API_URL } from '../../utility/globalVariable';
 
 const initialState = {
   username: null,
@@ -25,7 +24,7 @@ export const isLogIn = createAsyncThunk(
       const Authorization = getLocalStorageAuth();
       const username = getUserNameFromToken(Authorization);
       const res = await axios.post(
-        API_URL,
+        `${API_URL}/login`,
         { username },
         {
           headers: {
@@ -46,7 +45,7 @@ export const logIn = createAsyncThunk(
   async (username, thunkAPI) => {
     try {
       const res = await axios.post(
-        API_URL,
+        `${API_URL}/login`,
         { username },
         {
           headers: {
