@@ -5,6 +5,8 @@ const initialState = {
   cars: [],
   isLoading: false,
   error: null,
+  value: null,
+  length: 4,
 };
 
 const url = 'http://localhost:3000/api/v1/users/1/cars';
@@ -14,7 +16,6 @@ export const getCars = createAsyncThunk(
   async () => {
     try {
       const response = await axios(url);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error);
@@ -26,7 +27,17 @@ export const getCars = createAsyncThunk(
 const carsSlice = createSlice({
   name: 'cars',
   initialState,
-  reducers: {},
+  reducers: {
+    nextCar(state, action) {
+      // console.log('action', action.payload);
+      // console.log('state', state);
+      state.value = action.payload > state.length ? 1 : action.payload;
+    },
+    prevCar(state, action) {
+      state.value = action.payload < 1 ? state.length : action.payload;
+    },
+    dotCar() {},
+  },
   extraReducers: {
     [getCars.pending]: (state) => {
       state.isLoading = true;
@@ -34,12 +45,14 @@ const carsSlice = createSlice({
     [getCars.fulfilled]: (state, action) => {
       const data = action.payload;
       const newdata = data.map((car) => ({
-        id: car.car_id,
-        name: car.car_name,
+        id: car.id,
+        name: car.name,
         description: car.description,
       }));
       state.isLoading = false;
       state.cars = newdata;
+      state.length = newdata.length;
+      state.value = newdata.length - (newdata.length - 1);
     },
     [getCars.rejected]: (state) => {
       state.isLoading = false;
@@ -47,4 +60,5 @@ const carsSlice = createSlice({
   },
 });
 
+export const { nextCar, prevCar, dotCar } = carsSlice.actions;
 export default carsSlice.reducer;
