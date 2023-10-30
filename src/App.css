@@ -1,7 +1,7 @@
 :root {
   --color-bg-1: #ffb400;
   --color-bg-2: #97bf0f;
-  --color-white: #ffffff;
+  --color-white: #fff;
 }
 
 * {
@@ -10,8 +10,6 @@
   box-sizing: border-box;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-
-/*  */
 
 section.login,
 section.signup {
