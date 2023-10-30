@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { isLogIn } from './redux/login/loginSlice';
@@ -19,7 +19,7 @@ function App() {
     return <Login />;
   }
 
-  if (loginData.isLoading) return <p className="status">Loading...</p>;
+  if (loginData.isLoading) return <p className="status">Logging In...</p>;
   if (loginData.isError) {
     return <Login />;
   }
@@ -27,7 +27,9 @@ function App() {
   return (
     <main>
       <h1>Main Page</h1>
-      <Routes />
+      <Routes>
+        <Route path="/signin" element={<Login />} />
+      </Routes>
     </main>
   );
 }
