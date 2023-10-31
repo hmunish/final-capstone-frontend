@@ -1,7 +1,7 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { getLocalStorageAuth } from '../../utility/helper';
-import { API_URL } from '../../utility/globalVariable';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
+import { getLocalStorageAuth } from "../../utility/helper";
+import { API_URL } from "../../utility/globalVariable";
 
 const initialState = {
   cars: [],
@@ -11,7 +11,7 @@ const initialState = {
   length: null,
 };
 
-export const getCars = createAsyncThunk('cars/getCars', async () => {
+export const getCars = createAsyncThunk("cars/getCars", async () => {
   try {
     const authToken = getLocalStorageAuth();
     const response = await axios(`${API_URL}/users/1/cars`, {
@@ -21,13 +21,12 @@ export const getCars = createAsyncThunk('cars/getCars', async () => {
     });
     return response.data;
   } catch (error) {
-    console.log(error);
     return error;
   }
 });
 
 const carsSlice = createSlice({
-  name: 'cars',
+  name: "cars",
   initialState,
   reducers: {
     nextCar(state, action) {

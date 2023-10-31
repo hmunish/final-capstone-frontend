@@ -11,7 +11,6 @@ const Slider = () => {
   const slideLeft = () => {
     const leftMargin = +window.getComputedStyle(slider).marginLeft.slice(0, -2);
     if (leftMargin < (slider.childElementCount + 1) * -350) return;
-    console.log(leftMargin);
     document.querySelector("#slider").style.marginLeft = `${
       leftMargin - 350
     }px`;
