@@ -33,7 +33,7 @@ const NavMenu = () => {
               <NavLink to="/reservations/new">New Reservation</NavLink>
             </li>
             <li>
-              <NavLink to="/reservations/remove">Delete Reservation</NavLink>
+              <NavLink to="/cars/delete">Delete Car</NavLink>
             </li>
           </ul>
         </nav>
