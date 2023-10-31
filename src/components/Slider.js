@@ -7,8 +7,8 @@ import arrow from "../assets/arrow.png";
 const Slider = () => {
   // const sliderIndex = useSelector((state) => state.cars.value);
   // const dispatch = useDispatch();
+  const slider = document.querySelector("#slider");
   const slideLeft = () => {
-    const slider = document.querySelector("#slider");
     const rightMargin = +window
       .getComputedStyle(slider)
       .marginRight.slice(0, -2);
@@ -20,7 +20,6 @@ const Slider = () => {
   };
 
   const slideRight = () => {
-    const slider = document.querySelector("#slider");
     const leftMargin = +window.getComputedStyle(slider).marginLeft.slice(0, -2);
     const rightMargin = +window
       .getComputedStyle(slider)
