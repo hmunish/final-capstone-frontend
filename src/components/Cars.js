@@ -26,10 +26,6 @@ const Cars = () => {
         <h2>Latest Models</h2>
 
         <p>Please select a car model</p>
-        <p>
-          Cars Listed:
-          {cars.length}
-        </p>
       </div>
       <div id="slider" className={styles.cars}>
         {cars.map((car) => (
