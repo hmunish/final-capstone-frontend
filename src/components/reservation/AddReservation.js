@@ -36,11 +36,13 @@ function AddReservation() {
         <form className="reservation-form">
           <input type="date" name="bookingDate" />
           <select>
+            <option default>Location</option>
             <option value="london">London</option>
             <option value="newyork">New York</option>
             <option value="capetown">Cape Town</option>
           </select>
           <select>
+            <option default>Car Model</option>
             {cars.map((car) => (
               <option
                 key={car.id}
