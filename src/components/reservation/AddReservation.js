@@ -1,15 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
 import { getCars } from "../../redux/cars/carsSlice";
 
 function AddReservation() {
   const { cars, isLoading } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
 
-  const { carId } = useParams();
-
-  if (carId) console.log(carId);
+  const [searchParams] = useSearchParams();
+  const carId = searchParams.get("carId");
 
   useEffect(() => {
     dispatch(getCars());
@@ -43,7 +42,11 @@ function AddReservation() {
           </select>
           <select>
             {cars.map((car) => (
-              <option key={car.id} value={car.id}>
+              <option
+                key={car.id}
+                value={car.id}
+                selected={+carId === car.id ? true : ""}
+              >
                 {car.name}
               </option>
             ))}
