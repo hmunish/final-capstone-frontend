@@ -23,21 +23,19 @@ const Cars = () => {
 
   return (
     <div>
-      <h2>
-        Cars Avaliable
-      </h2>
-      <p>
-        Please select a vehicle
-      </p>
+      <h2>Cars Avaliable</h2>
+      <p>Please select a vehicle</p>
       <p>
         Cars Listed:
-        {' '}
         {cars.length}
       </p>
 
       <div className={styles.cars}>
         {cars.map((car) => (
-          <div key={car.id} className={car.id === slideIndex ? styles.dblock : styles.dnone}>
+          <div
+            key={car.id}
+            className={car.id === slideIndex ? styles.dblock : styles.dnone}
+          >
             <Car
               name={car.name}
               image={car.image}
@@ -47,7 +45,6 @@ const Cars = () => {
         ))}
       </div>
       <Slider />
-
     </div>
   );
 };

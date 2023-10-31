@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {
-  getLocalStorageAuth,
-} from '../../utility/helper';
+import { getLocalStorageAuth } from '../../utility/helper';
 import { API_URL } from '../../utility/globalVariable';
 
 const initialState = {
@@ -13,34 +11,30 @@ const initialState = {
   length: null,
 };
 
-export const getCars = createAsyncThunk(
-  'cars/getCars',
-  async () => {
-    try {
-      const authToken = getLocalStorageAuth();
-      const response = await axios(`${API_URL}/users/1/cars`,
-        {
-          headers: {
-            Authorization: `Bearer ${authToken}`, // Include the Authorization header with the token
-          },
-        });
-      return response.data;
-    } catch (error) {
-      console.log(error);
-      return error;
-    }
-  },
-);
+export const getCars = createAsyncThunk('cars/getCars', async () => {
+  try {
+    const authToken = getLocalStorageAuth();
+    const response = await axios(`${API_URL}/users/1/cars`, {
+      headers: {
+        Authorization: `Bearer ${authToken}`, // Include the Authorization header with the token
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+});
 
 const carsSlice = createSlice({
   name: 'cars',
   initialState,
   reducers: {
     nextCar(state, action) {
-      state.value = action.payload > state.length ? 1 : action.payload;
+      state.value = action.payload > state.length ? 6 : action.payload;
     },
     prevCar(state, action) {
-      state.value = action.payload < 1 ? state.length : action.payload;
+      state.value = action.payload < 6 ? state.length : action.payload;
     },
     dotCar() {},
   },
