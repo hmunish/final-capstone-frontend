@@ -1,10 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import {
-  // getUserIdFromToken,
-  // getUserNameFromToken,
   getLocalStorageAuth,
-  // setLocalStorageAuth,
 } from '../../utility/helper';
 import { API_URL } from '../../utility/globalVariable';
 
@@ -15,8 +12,6 @@ const initialState = {
   value: null,
   length: null,
 };
-
-// const url = 'http://localhost:3000/api/v1/users/1/cars';
 
 export const getCars = createAsyncThunk(
   'cars/getCars',

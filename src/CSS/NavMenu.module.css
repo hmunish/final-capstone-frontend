@@ -2,9 +2,9 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 70%;
   height: 100%;
-  background-color: azure;
+  background-color: #feeec9e2;
 }
 
 .navigation {
@@ -21,8 +21,5 @@ header {
 
 a {
   text-decoration: none;
-}
-
-.mobmenu {
-  display: block;
+  color: rgb(0, 17, 17);
 }

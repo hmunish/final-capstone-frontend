@@ -28,7 +28,6 @@ function App() {
 
   return (
     <main>
-      <h1>Main Page</h1>
       <NavMenu />
       <Routes>
         <Route path="/signin" element={<Login />} />
