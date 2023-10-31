@@ -6,6 +6,8 @@ import { isLogIn } from "./redux/login/loginSlice";
 import Login from "./components/login/login";
 import Cars from "./components/car/Cars";
 import NavMenu from "./components/nav/NavMenu";
+import AddReservation from "./components/reservation/AddReservation";
+import ReservationList from "./components/reservation/ReservationList";
 
 function App() {
   const loginData = useSelector((state) => state.login);
@@ -32,6 +34,8 @@ function App() {
       <Routes>
         <Route path="/signin" element={<Login />} />
         <Route path="/" element={<Cars />} />
+        <Route path="/reservations" element={<ReservationList />} />
+        <Route path="/reservations/new" element={<AddReservation />} />
       </Routes>
     </main>
   );
