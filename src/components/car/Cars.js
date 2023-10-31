@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCars } from "../redux/cars/carsSlice";
+import { getCars } from "../../redux/cars/carsSlice";
 import Car from "./Car";
-import styles from "../CSS/Cars.module.css";
-import Slider from "./Slider";
+import styles from "../../CSS/Cars.module.css";
+import Slider from "../Slider";
 
 const Cars = () => {
   const { cars, isLoading } = useSelector((state) => state.cars);

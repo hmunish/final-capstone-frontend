@@ -11,7 +11,7 @@ const initialState = {
   length: null,
 };
 
-export const getCars = createAsyncThunk("cars/getCars", async () => {
+export const getCars = createAsyncThunk("cars/getCars", async (_, thunkAPI) => {
   try {
     const authToken = getLocalStorageAuth();
     const response = await axios(`${API_URL}/users/1/cars`, {
@@ -21,7 +21,7 @@ export const getCars = createAsyncThunk("cars/getCars", async () => {
     });
     return response.data;
   } catch (error) {
-    return error;
+    return thunkAPI.rejectWithValue("Error fetching cars");
   }
 });
 

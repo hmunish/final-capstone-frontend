@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "../CSS/Car.module.css";
-import carImg from "../assets/car-1.png";
-import fb from "../assets/fb.png";
-import twitter from "../assets/twitter.png";
-import insta from "../assets/insta.png";
+import styles from "../../CSS/Car.module.css";
+import carImg from "../../assets/car-1.png";
+import fb from "../../assets/fb.png";
+import twitter from "../../assets/twitter.png";
+import insta from "../../assets/insta.png";
 
 const Car = ({ name, image, description }) => (
   <div className={styles.car}>

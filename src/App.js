@@ -1,11 +1,11 @@
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { isLogIn } from './redux/login/loginSlice';
-import Login from './components/login/login';
-import Cars from './components/Cars';
-import NavMenu from './components/nav/NavMenu';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { isLogIn } from "./redux/login/loginSlice";
+import Login from "./components/login/login";
+import Cars from "./components/car/Cars";
+import NavMenu from "./components/nav/NavMenu";
 
 function App() {
   const loginData = useSelector((state) => state.login);
@@ -15,7 +15,7 @@ function App() {
   }, [dispatch]);
 
   // Checking if the authentication token key exists
-  const authKey = localStorage.getItem('authKey');
+  const authKey = localStorage.getItem("authKey");
   // If authKey does not exist display login page
   if (!authKey) {
     return <Login />;
