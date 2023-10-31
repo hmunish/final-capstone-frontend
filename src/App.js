@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { isLogIn } from './redux/login/loginSlice';
 import Login from './components/login/login';
 import Cars from './components/Cars';
-import Main from './components/Main';
 import NavMenu from './components/NavMenu';
 
 function App() {
@@ -33,8 +32,7 @@ function App() {
       <NavMenu />
       <Routes>
         <Route path="/signin" element={<Login />} />
-        <Route path="/" element={<Main />} />
-        <Route path="/Cars" element={<Cars />} />
+        <Route path="/" element={<Cars />} />
       </Routes>
     </main>
   );

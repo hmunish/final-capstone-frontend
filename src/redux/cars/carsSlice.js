@@ -1,5 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import {
+  // getUserIdFromToken,
+  // getUserNameFromToken,
+  getLocalStorageAuth,
+  // setLocalStorageAuth,
+} from '../../utility/helper';
+import { API_URL } from '../../utility/globalVariable';
 
 const initialState = {
   cars: [],
@@ -9,13 +16,19 @@ const initialState = {
   length: null,
 };
 
-const url = 'http://localhost:3000/api/v1/users/1/cars';
+// const url = 'http://localhost:3000/api/v1/users/1/cars';
 
 export const getCars = createAsyncThunk(
   'cars/getCars',
   async () => {
     try {
-      const response = await axios(url);
+      const authToken = getLocalStorageAuth();
+      const response = await axios(`${API_URL}/users/1/cars`,
+        {
+          headers: {
+            Authorization: `Bearer ${authToken}`, // Include the Authorization header with the token
+          },
+        });
       return response.data;
     } catch (error) {
       console.log(error);
@@ -29,8 +42,6 @@ const carsSlice = createSlice({
   initialState,
   reducers: {
     nextCar(state, action) {
-      // console.log('action', action.payload);
-      // console.log('state', state);
       state.value = action.payload > state.length ? 1 : action.payload;
     },
     prevCar(state, action) {
