@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { isLogIn } from './redux/login/loginSlice';
 import Login from './components/login/login';
 import Cars from './components/Cars';
-import NavMenu from './components/NavMenu';
+import NavMenu from './components/nav/NavMenu';
 
 function App() {
   const loginData = useSelector((state) => state.login);

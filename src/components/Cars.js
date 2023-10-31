@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCars } from '../redux/cars/carsSlice';
-import Car from './Car';
-import styles from '../CSS/Cars.module.css';
-import Slider from './Slider';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCars } from "../redux/cars/carsSlice";
+import Car from "./Car";
+import styles from "../CSS/Cars.module.css";
+import Slider from "./Slider";
 
 const Cars = () => {
   const { cars, isLoading } = useSelector((state) => state.cars);
-  const slideIndex = useSelector((state) => state.cars.value);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCars());
@@ -22,20 +21,19 @@ const Cars = () => {
   }
 
   return (
-    <div>
-      <h2>Cars Avaliable</h2>
-      <p>Please select a vehicle</p>
-      <p>
-        Cars Listed:
-        {cars.length}
-      </p>
+    <section className={styles.carsSection}>
+      <div className={styles.titleBox}>
+        <h2>Latest Models</h2>
 
-      <div className={styles.cars}>
+        <p>Please select a car model</p>
+        <p>
+          Cars Listed:
+          {cars.length}
+        </p>
+      </div>
+      <div id="slider" className={styles.cars}>
         {cars.map((car) => (
-          <div
-            key={car.id}
-            className={car.id === slideIndex ? styles.dblock : styles.dnone}
-          >
+          <div key={car.id}>
             <Car
               name={car.name}
               image={car.image}
@@ -45,7 +43,7 @@ const Cars = () => {
         ))}
       </div>
       <Slider />
-    </div>
+    </section>
   );
 };
 

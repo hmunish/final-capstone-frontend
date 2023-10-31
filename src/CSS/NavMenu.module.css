@@ -1,10 +1,14 @@
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 70%;
-  height: 100%;
-  background-color: #feeec9e2;
+.sidebarMenu {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 75%;
 }
 
 .navigation {

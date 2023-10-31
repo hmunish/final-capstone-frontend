@@ -51,11 +51,19 @@ section.signup > form {
   color: var(--color-white);
 }
 
+main {
+  display: flex;
+}
+
 .mobmenu {
   position: fixed;
-  right: 1rem;
+  left: 1rem;
   top: 1rem;
   width: 30px;
+  z-index: 5;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .mobmenu > img {

@@ -1,16 +1,41 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { nextCar, prevCar } from '../redux/cars/carsSlice';
-import styles from '../CSS/Slider.module.css';
+import React from "react";
+// import { useDispatch, useSelector } from "react-redux";
+// import { nextCar } from "../redux/cars/carsSlice";
+import styles from "../CSS/Slider.module.css";
+import arrow from "../assets/arrow.png";
 
 const Slider = () => {
-  const sliderIndex = useSelector((state) => state.cars.value);
-  const dispatch = useDispatch();
+  // const sliderIndex = useSelector((state) => state.cars.value);
+  // const dispatch = useDispatch();
+  const slideLeft = () => {
+    const slider = document.querySelector("#slider");
+    const currentMargin = +window
+      .getComputedStyle(slider)
+      .marginRight.slice(0, -2);
+    console.log(currentMargin);
+    document.querySelector("#slider").style.marginRight = `${
+      currentMargin + 350
+    }px`;
+  };
+
+  const slideRight = () => {
+    const slider = document.querySelector("#slider");
+    const currentMargin = +window
+      .getComputedStyle(slider)
+      .marginLeft.slice(0, -2);
+    console.log(currentMargin);
+    document.querySelector("#slider").style.marginLeft = `${
+      currentMargin + 350
+    }px`;
+  };
   return (
     <div className={styles.prevnextbtns}>
-      <button type="button" onClick={() => dispatch(prevCar(sliderIndex - 1))}>Prev</button>
-      <button type="button" onClick={() => dispatch(nextCar(sliderIndex + 1))}>Next</button>
-
+      <button type="button" onClick={() => slideLeft()}>
+        <img src={arrow} alt="Previous" />
+      </button>
+      <button type="button" onClick={() => slideRight()}>
+        <img src={arrow} alt="Next" />
+      </button>
     </div>
   );
 };
