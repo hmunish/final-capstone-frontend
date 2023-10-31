@@ -9,24 +9,17 @@ const Slider = () => {
   // const dispatch = useDispatch();
   const slider = document.querySelector("#slider");
   const slideLeft = () => {
-    const rightMargin = +window
-      .getComputedStyle(slider)
-      .marginRight.slice(0, -2);
     const leftMargin = +window.getComputedStyle(slider).marginLeft.slice(0, -2);
-    if (rightMargin - leftMargin >= slider.childElementCount * 350) return;
-    document.querySelector("#slider").style.marginRight = `${
-      rightMargin + 350
+    if (leftMargin < (slider.childElementCount + 1) * -350) return;
+    console.log(leftMargin);
+    document.querySelector("#slider").style.marginLeft = `${
+      leftMargin - 350
     }px`;
   };
 
   const slideRight = () => {
     const leftMargin = +window.getComputedStyle(slider).marginLeft.slice(0, -2);
-    const rightMargin = +window
-      .getComputedStyle(slider)
-      .marginRight.slice(0, -2);
-    if (leftMargin - rightMargin >= (slider.childElementCount - 1) * 350) {
-      return;
-    }
+    if (leftMargin >= 0) return;
     document.querySelector("#slider").style.marginLeft = `${
       leftMargin + 350
     }px`;
