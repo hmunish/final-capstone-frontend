@@ -1,10 +1,15 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router";
 import { getCars } from "../../redux/cars/carsSlice";
 
 function AddReservation() {
   const { cars, isLoading } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
+
+  const { carId } = useParams();
+
+  if (carId) console.log(carId);
 
   useEffect(() => {
     dispatch(getCars());
