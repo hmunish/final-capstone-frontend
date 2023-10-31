@@ -1,22 +1,38 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { isLogIn } from './redux/login/loginSlice';
+import Login from './components/login/login';
 import Cars from './components/Cars';
 import Main from './components/Main';
 import NavMenu from './components/NavMenu';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(true);
+  const loginData = useSelector((state) => state.login);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(isLogIn());
+  }, [dispatch]);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  // Checking if the authentication token key exists
+  const authKey = localStorage.getItem('authKey');
+  // If authKey does not exist display login page
+  if (!authKey) {
+    return <Login />;
+  }
+
+  if (loginData.isLoading) return <p className="status">Logging In...</p>;
+  if (loginData.isError) {
+    return <Login />;
+  }
 
   return (
     <main>
-      <button onClick={toggleMenu} type="button">Menu</button>
-      {isOpen && <NavMenu />}
+      <h1>Main Page</h1>
+      <NavMenu />
       <Routes>
+        <Route path="/signin" element={<Login />} />
         <Route path="/" element={<Main />} />
         <Route path="/Cars" element={<Cars />} />
       </Routes>
