@@ -1,12 +1,12 @@
-import axios from 'axios';
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from "axios";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {
   getUserIdFromToken,
   getUserNameFromToken,
   getLocalStorageAuth,
   setLocalStorageAuth,
-} from '../../utility/helper';
-import { API_URL } from '../../utility/globalVariable';
+} from "../../utility/helper";
+import { API_URL } from "../../utility/globalVariable";
 
 const initialState = {
   username: null,
@@ -18,7 +18,7 @@ const initialState = {
 };
 
 export const isLogIn = createAsyncThunk(
-  'login/isLogIn',
+  "login/isLogIn",
   async (_, thunkAPI) => {
     try {
       const Authorization = getLocalStorageAuth();
@@ -28,20 +28,20 @@ export const isLogIn = createAsyncThunk(
         { username },
         {
           headers: {
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
         },
       );
-      if (res.status !== 200) throw new Error('Error');
+      if (res.status !== 200) throw new Error("Error");
       return res;
     } catch (err) {
-      return thunkAPI.rejectWithValue('Something went wrong');
+      return thunkAPI.rejectWithValue("Something went wrong");
     }
   },
 );
 
 export const logIn = createAsyncThunk(
-  'login/logIn',
+  "login/logIn",
   async (username, thunkAPI) => {
     try {
       const res = await axios.post(
@@ -49,21 +49,20 @@ export const logIn = createAsyncThunk(
         { username },
         {
           headers: {
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
         },
       );
-      console.log(res);
-      if (res.status !== 200) throw new Error('Error');
+      if (res.status !== 200) throw new Error("Error");
       return res;
     } catch (err) {
-      return thunkAPI.rejectWithValue('Something went wrong');
+      return thunkAPI.rejectWithValue("Something went wrong");
     }
   },
 );
 
 export const loginSlice = createSlice({
-  name: 'loginSlice',
+  name: "loginSlice",
   initialState,
   extraReducers: (builder) => {
     builder.addCase(isLogIn.fulfilled, (state, action) => {
@@ -78,7 +77,7 @@ export const loginSlice = createSlice({
     });
     builder.addCase(isLogIn.rejected, (state) => {
       state.isLoading = false;
-      state.isError = 'Error Logging In';
+      state.isError = "Error Logging In";
     });
     builder.addCase(logIn.fulfilled, (state, action) => {
       state.isLoading = false;
