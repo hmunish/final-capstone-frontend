@@ -3,6 +3,8 @@ import axios from "axios";
 import { getLocalStorageAuth } from "../../utility/helper";
 import { API_URL } from "../../utility/globalVariable";
 
+axios.defaults.headers.common.Authorization = getLocalStorageAuth();
+
 const initialState = {
   cars: [],
   isLoading: false,
@@ -22,6 +24,41 @@ export const getCars = createAsyncThunk("cars/getCars", async (_, thunkAPI) => {
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue("Error fetching cars");
+  }
+});
+
+export const addCar = createAsyncThunk("cars/addCar", async ({
+  userId,
+  name,
+  image,
+  description,
+  deposit,
+  financeFee,
+  optionToPurchaseFee,
+  totalAmountPayable,
+  duration,
+}, thunkAPI) => {
+  try {
+    const response = await axios.post(`${API_URL}/users/${userId}/cars`,
+      {
+        name,
+        image,
+        description,
+        deposit,
+        financeFee,
+        optionToPurchaseFee,
+        totalAmountPayable,
+        duration,
+      },
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+    if (response.status !== 201) throw new Error("error");
+    return response;
+  } catch (error) {
+    return thunkAPI.rejectWithValue("Error adding reservation");
   }
 });
 
