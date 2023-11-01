@@ -19,28 +19,57 @@ const AddCar = () => {
       <form>
         <ul>
           <li>
-            <input type="text" id="name" maxLength={30} name="name" required placeholder="Car Name" />
+            <label htmlFor="name">
+              Name:
+              <br />
+              <input type="text" id="name" maxLength={30} name="name" required placeholder="Car Name" />
+            </label>
           </li>
           <li>
-            <input type="file" id="image" name="image" required />
+            <label htmlFor="image">
+              Image:
+              <br />
+              <input type="file" id="image" name="image" required />
+            </label>
           </li>
+
           <li>
             <input type="text" id="description" name="description" required placeholder="Model" />
           </li>
           <li>
-            <input type="number" id="deposit" name="deposit" required placeholder="Deposit" min="0" value={0} />
+            <label htmlFor="deposit">
+              Deposit:
+              <br />
+              <input type="number" id="deposit" name="deposit" required placeholder="Deposit" min="0" value={0} />
+            </label>
           </li>
           <li>
-            <input type="number" id="financeFee" name="financeFee" required placeholder="Finance Fee" min="0" value={0} />
+            <label htmlFor="financeFee">
+              Finance Fee:
+              <br />
+              <input type="number" id="financeFee" name="financeFee" required placeholder="Finance Fee" min="0" value={0} />
+            </label>
           </li>
           <li>
-            <input type="number" id="optionToPurchaseFee" name="optionToPurchaseFee" required placeholder="Option to Purchase Fee" min="0" value={0} />
+            <label htmlFor="optionToPurchaseFee">
+              Option to Purchase Fee:
+              <br />
+              <input type="number" id="optionToPurchaseFee" name="optionToPurchaseFee" required placeholder="Option to Purchase Fee" min="0" value={0} />
+            </label>
           </li>
           <li>
-            <input type="number" id="totalAmountPayable" name="totalAmountPayable" required placeholder="Total Amount Payable" min="0" value={0} />
+            <label htmlFor="totalAmountPayable">
+              Total Amount Payable:
+              <br />
+              <input type="number" id="totalAmountPayable" name="totalAmountPayable" required placeholder="Total Amount Payable" min="0" value={0} />
+            </label>
           </li>
           <li>
-            <input type="number" id="duration" name="duration" required placeholder="Duration (Days)" min="0" value={0} />
+            <label htmlFor="Duration">
+              Duration:
+              <br />
+              <input type="number" id="duration" name="duration" required placeholder="Duration (Days)" min="0" value={0} />
+            </label>
           </li>
           <input type="submit" value="Add Car" />
         </ul>
