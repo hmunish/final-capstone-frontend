@@ -93,6 +93,18 @@ const carsSlice = createSlice({
     [getCars.rejected]: (state) => {
       state.isLoading = false;
     },
+    [addCar.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [addCar.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.cars = action.payload.status.data;
+      console.log(action.payload.status.data);
+    },
+    [addCar.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   },
 });
 
