@@ -2,9 +2,12 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { getCars } from "../../redux/cars/carsSlice";
+import { addReservation } from "../../redux/reservations/reservationSlice";
 
 function AddReservation() {
   const { cars, isLoading } = useSelector((state) => state.cars);
+  const { isCreated, isError } = useSelector((state) => state.reservations);
+  const { userId } = useSelector((state) => state.login);
   const dispatch = useDispatch();
 
   const [searchParams] = useSearchParams();
@@ -21,6 +24,21 @@ function AddReservation() {
       </div>
     );
   }
+
+  const handleAddReservation = (e) => {
+    e.preventDefault();
+    const bookingDate = e.target.bookingDate.value;
+    const location = e.target.location.value;
+    const carId = e.target.carId.value;
+    dispatch(
+      addReservation({
+        userId,
+        bookingDate,
+        location,
+        carId,
+      }),
+    );
+  };
   return (
     <section className="add-reservation">
       <div className="green-overlay" />
@@ -33,15 +51,18 @@ function AddReservation() {
           find out if a test ride is available in your area, then choose your
           car, bike, and location below.
         </p>
-        <form className="reservation-form">
-          <input type="date" name="bookingDate" />
-          <select>
+        <form
+          className="reservation-form"
+          onSubmit={(e) => handleAddReservation(e)}
+        >
+          <input type="date" name="bookingDate" required />
+          <select name="location" required>
             <option default>Location</option>
             <option value="london">London</option>
             <option value="newyork">New York</option>
             <option value="capetown">Cape Town</option>
           </select>
-          <select>
+          <select name="carId" required>
             <option default>Car Model</option>
             {cars.map((car) => (
               <option
@@ -55,6 +76,8 @@ function AddReservation() {
           </select>
           <input type="submit" value="Book Now" />
         </form>
+        <p>{isError && isError}</p>
+        <p>{isCreated && "Reservation added successfully"}</p>
       </div>
     </section>
   );
