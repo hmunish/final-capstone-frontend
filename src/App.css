@@ -76,7 +76,8 @@ main {
 
 /* Add reservation page starts here */
 
-section.add-reservation {
+section.add-reservation,
+section.reservation-list {
   width: 100%;
   min-height: 100vh;
   background: url(./assets/cars-bg-home.png) center no-repeat;
@@ -93,7 +94,8 @@ div.green-overlay {
   background: #96bf0ff3;
 }
 
-section.add-reservation > .wrapper {
+section.add-reservation > .wrapper,
+section.reservation-list > table {
   width: 50%;
   min-width: 500px;
   height: 50%;
@@ -109,7 +111,8 @@ section.add-reservation > .wrapper {
 }
 
 @media screen and (max-width: 500px) {
-  section.add-reservation > .wrapper {
+  section.add-reservation > .wrapper,
+  section.reservation-list > table {
     width: 90%;
     min-width: 90%;
   }
@@ -153,3 +156,16 @@ section.add-reservation > .wrapper > hr {
 }
 
 /* Add reservation page ends here */
+
+/* Reservation list starts here */
+section.reservation-list > table {
+  display: table;
+  border-collapse: collapse;
+}
+
+section.reservation-list > table td,
+th {
+  border: 1px solid #ffffff;
+  padding: 5px;
+}
+/* Reservation list ends here */
