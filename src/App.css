@@ -98,7 +98,6 @@ section.add-reservation > .wrapper,
 section.reservation-list > table {
   width: 50%;
   min-width: 500px;
-  height: 50%;
   position: relative;
   z-index: 3;
   display: flex;
@@ -170,3 +169,115 @@ th {
 }
 
 /* Reservation list ends here */
+
+/* Car details starts here */
+section.car-details {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+div.car-details-img {
+  flex-basis: 70%;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (max-width: 750px) {
+  div.car-details-img {
+    background-size: 500px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.car-details-img {
+    background-size: contain;
+  }
+}
+
+div.car-details {
+  min-width: 250px;
+  flex-basis: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: aqua; */
+}
+
+.car-details-list {
+  list-style: none;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.car-details-list > li {
+  padding: 15px 5px;
+  background-color: #e2e2e2;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.car-details-list > li:nth-child(odd) {
+  background-color: var(--color-white);
+}
+
+div.car-details > .wrapper {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+div.car-details > .wrapper > h1 {
+  font-size: 2.5rem;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+div.car-details > .wrapper > p {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+div.car-details > .wrapper > h3 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+div.car-details > .wrapper > h3 > span {
+  font-weight: bold;
+}
+
+.discover-more {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  text-align: right;
+  margin-top: 25px;
+  font-weight: 1000;
+}
+
+.discover-more::after {
+  content: ">";
+  color: var(--color-bg-1);
+  padding: 0 5px;
+}
+
+.reserve-btn {
+  width: 90%;
+  border-radius: 16px;
+  color: var(--color-white);
+  text-align: center;
+  align-self: flex-end;
+  padding: 15px;
+  background-color: var(--color-bg-2);
+}
+
+.colors-img {
+  width: 100px;
+  align-self: flex-end;
+  margin: 5px 0;
+}
+/* Car details ends here*/
