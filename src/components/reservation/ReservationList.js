@@ -6,7 +6,7 @@ import { getCars } from "../../redux/cars/carsSlice";
 function ReservationList() {
   const { userId } = useSelector((state) => state.login);
   const { reservations, isLoading, isError } = useSelector(
-    (state) => state.reservations
+    (state) => state.reservations,
   );
   const { cars } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
