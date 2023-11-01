@@ -36,7 +36,7 @@ function App() {
         <Route path="/signin" element={<Login />} />
         <Route path="/car/details/:carId?" element={<CarDetail />} />
         <Route path="/reservations" element={<ReservationList />} />
-        <Route path="/reservations/new/:carId?" element={<AddReservation />} />
+        <Route path="/reservation/new/:carId?" element={<AddReservation />} />
         <Route path="/" element={<Cars />} />
       </Routes>
     </main>

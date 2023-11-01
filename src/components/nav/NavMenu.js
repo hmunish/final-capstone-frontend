@@ -22,19 +22,44 @@ const NavMenu = () => {
           <nav className={styles.navigation}>
             <ul className={styles.navlist}>
               <li>
-                <NavLink to="/">Cars</NavLink>
+                <NavLink
+                  className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
+                  to="/"
+                >
+                  Cars
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/reservations">Reservations</NavLink>
+                <NavLink
+                  className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
+                  to="/reservations"
+                >
+                  Reservations
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/cars/new">New Car</NavLink>
+                <NavLink
+                  className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
+                  to="/cars/new"
+                >
+                  New Car
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/reservations/new">New Reservation</NavLink>
+                <NavLink
+                  className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
+                  to="/reservation/new"
+                >
+                  New Reservation
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/cars/delete">Delete Car</NavLink>
+                <NavLink
+                  className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
+                  to="/cars/delete"
+                >
+                  Delete Car
+                </NavLink>
               </li>
             </ul>
           </nav>

@@ -175,6 +175,21 @@ section.car-details {
   width: 100%;
   min-height: 100vh;
   display: flex;
+  position: relative;
+}
+
+section.car-details > .back-btn {
+  position: absolute;
+  padding: 15px 35px;
+  background-color: var(--color-bg-2);
+  bottom: 25px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+section.car-details > .back-btn > img {
+  width: 15px;
+  transform: rotateZ(180deg);
 }
 
 div.car-details-img {

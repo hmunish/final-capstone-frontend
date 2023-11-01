@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getCarById } from "../../redux/cars/carsSlice";
 import colorsImg from "../../assets/colors.PNG";
+import arrow from "../../assets/arrow.png";
 
 const CarDetail = () => {
   const { car, isLoading } = useSelector((state) => state.cars);
@@ -20,6 +21,9 @@ const CarDetail = () => {
   if (car) {
     return (
       <section className="car-details">
+        <Link to="/" className="back-btn">
+          <img src={arrow} alt="Back" />
+        </Link>
         <div
           className="car-details-img"
           style={{
@@ -81,7 +85,7 @@ const CarDetail = () => {
             <img src={colorsImg} alt="ColorsImage" className="colors-img" />
             <br />
             <Link
-              to={`/reservations/new?carId=${car.id}`}
+              to={`/reservation/new?carId=${car.id}`}
               className="reserve-btn"
             >
               Reserve
