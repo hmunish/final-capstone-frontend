@@ -203,6 +203,7 @@ div.car-details {
   display: flex;
   align-items: center;
   justify-content: center;
+
   /* background-color: aqua; */
 }
 
@@ -280,4 +281,5 @@ div.car-details > .wrapper > h3 > span {
   align-self: flex-end;
   margin: 5px 0;
 }
-/* Car details ends here*/
+
+/* Car details ends here */
