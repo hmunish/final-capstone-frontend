@@ -74,7 +74,7 @@ main {
   width: 100%;
 }
 
-/* Add reservation page starts here*/
+/* Add reservation page starts here */
 
 section.add-reservation {
   width: 100%;
@@ -104,7 +104,7 @@ section.add-reservation > .wrapper {
   align-items: center;
   justify-content: space-around;
   gap: 15px;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
 }
 
@@ -136,14 +136,14 @@ section.add-reservation > .wrapper > hr {
 .reservation-form > * {
   flex-grow: 1;
   background: none;
-  border: 3px solid #ffffff;
-  color: #ffffff;
+  border: 3px solid #fff;
+  color: #fff;
   border-radius: 16px;
   padding: 5px;
 }
 
 .reservation-form option {
-  color: #000000;
+  color: #000;
 }
 
 .reservation-form > input[type="submit"] {
@@ -151,4 +151,5 @@ section.add-reservation > .wrapper > hr {
   color: var(--color-bg-2);
   cursor: pointer;
 }
+
 /* Add reservation page ends here */
