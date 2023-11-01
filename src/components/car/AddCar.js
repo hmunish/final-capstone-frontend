@@ -1,10 +1,37 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCar } from '../../redux/cars/carsSlice';
 
 const AddCar = () => {
   const { isLoading } = useSelector((state) => state.cars);
-  // const { userId } = useSelector((state) => state.login);
-  // const dispatch = useDispatch();
+  const { userId } = useSelector((state) => state.login);
+  const dispatch = useDispatch();
+
+  const handleAddCar = (e) => {
+    e.preventdefault();
+    const name = e.target.name.value;
+    const image = e.target.image.value;
+    const description = e.target.description.value;
+    const deposit = e.target.deposit.value;
+    const financeFee = e.target.financeFee.value;
+    const optionToPurchaseFee = e.target.optionToPurchaseFee.value;
+    const totalAmountPayable = e.target.totalAmountPayable.value;
+    const duration = e.target.duration.value;
+
+    dispatch(
+      addCar({
+        userId,
+        name,
+        image,
+        description,
+        deposit,
+        financeFee,
+        optionToPurchaseFee,
+        totalAmountPayable,
+        duration,
+      }),
+    );
+  };
 
   if (isLoading) {
     return (
@@ -16,7 +43,7 @@ const AddCar = () => {
 
   return (
     <section>
-      <form>
+      <form onSubmit={(e) => handleAddCar(e)}>
         <ul>
           <li>
             <label htmlFor="name">
