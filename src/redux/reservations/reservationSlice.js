@@ -12,13 +12,27 @@ const initialState = {
   isCreated: false,
 };
 
+export const getReservations = createAsyncThunk(
+  "reservation/getReservations",
+  async (userId, thunkAPI) => {
+    try {
+      const response = await axios.get(
+        `${API_URL}/users/${userId}/reservations`,
+      );
+      if (response.status !== 200) throw new Error("Error");
+      return response.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue("Error fetching reservations");
+    }
+  },
+);
+
 export const addReservation = createAsyncThunk(
   "reservation/addReservation",
   async ({
     userId, bookingDate: date, location, carId,
   }, thunkAPI) => {
     try {
-      console.log(userId);
       const res = await axios.post(
         `${API_URL}/users/${userId}/reservations`,
         {
@@ -56,6 +70,18 @@ export const reservationSlice = createSlice({
       state.isLoading = false;
       state.isError = action.payload;
       state.isCreated = false;
+    });
+    builder.addCase(getReservations.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.reservations = action.payload.status.data;
+    });
+    builder.addCase(getReservations.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(getReservations.rejected, (state, action) => {
+      state.isLoading = false;
+      state.isError = action.payload;
     });
   },
 });
