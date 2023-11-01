@@ -12,7 +12,7 @@ const NavMenu = () => {
   };
 
   return (
-    <section>
+    <section className="sidebar">
       <button className="mobmenu" type="button" onClick={toggleMenu}>
         <img src={menu} alt="menu" />
       </button>
