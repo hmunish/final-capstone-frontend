@@ -89,10 +89,13 @@ const carsSlice = createSlice({
     },
     dotCar() {},
     removeCar(state, action) {
-      const index = state.cars.indexOf(action.payload);
+      const id = action.payload;
+      const index = state.cars.findIndex((car) => car.id === id);
       if (index !== -1) {
         const removedCar = state.cars.splice(index, 1)[0];
         state.removedCars.push(removedCar);
+        console.log(state.removedCars, 'removed cars');
+        console.log(state.cars, 'cars');
       }
     },
     recoverCar(state, action) {
