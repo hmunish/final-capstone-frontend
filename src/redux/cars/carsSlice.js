@@ -12,6 +12,7 @@ const initialState = {
   value: null,
   length: null,
   car: null,
+  removedCars: [],
 };
 
 export const getCars = createAsyncThunk("cars/getCars", async (_, thunkAPI) => {
@@ -88,9 +89,15 @@ const carsSlice = createSlice({
     },
     dotCar() {},
     removeCar(state, action) {
-      const filteredCars = state.cars((car) => car.id !== action.payload);
-      state.cars = filteredCars;
+      const index = state.cars.indexOf(action.payload);
+      if (index !== -1) {
+        const removedCar = state.cars.splice(index, 1)[0];
+        state.removedCars.push(removedCar);
+      }
     },
+    recoverCar(state, action) {
+
+    }
   },
   extraReducers: {
     [getCars.pending]: (state) => {
