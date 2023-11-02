@@ -8,7 +8,7 @@ const AddCar = () => {
   const dispatch = useDispatch();
 
   const handleAddCar = (e) => {
-    e.preventdefault();
+    e.preventDefault();
     const name = e.target.name.value;
     const image = e.target.image.value;
     const description = e.target.description.value;
