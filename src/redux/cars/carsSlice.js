@@ -96,8 +96,12 @@ const carsSlice = createSlice({
       }
     },
     recoverCar(state, action) {
-
-    }
+      const index = state.removedCars.indexOf(action.payload);
+      if (index !== -1) {
+        const recoveredCar = state.removedCars.splice(index, 1)[0];
+        state.cars.push(recoveredCar);
+      }
+    },
   },
   extraReducers: {
     [getCars.pending]: (state) => {
