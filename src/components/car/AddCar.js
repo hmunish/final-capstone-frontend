@@ -17,6 +17,14 @@ const AddCar = () => {
     const optionToPurchaseFee = e.target.optionToPurchaseFee.value;
     const totalAmountPayable = e.target.totalAmountPayable.value;
     const duration = e.target.duration.value;
+    console.log(name,
+      image,
+      description,
+      deposit,
+      financeFee,
+      optionToPurchaseFee,
+      totalAmountPayable,
+      duration);
 
     dispatch(
       addCar({
