@@ -64,6 +64,26 @@ export const addCar = createAsyncThunk(
   },
 );
 
+export const deleteCar = createAsyncThunk(
+  "cars/deleteCar",
+  async ({ userId, carId }, thunkAPI) => {
+    try {
+      const response = await axios.delete(
+        `${API_URL}/users/${userId}/cars/${carId}`,
+        {
+          data: {
+            id: carId,
+            user_id: userId,
+          },
+        },
+      );
+      return response;
+    } catch (error) {
+      return thunkAPI.rejectWithValue("Error Deleting Car");
+    }
+  },
+);
+
 export const getCarById = createAsyncThunk(
   "cars/getCarById",
   async ({ userId, carId }, thunkAPI) => {
@@ -89,23 +109,6 @@ const carsSlice = createSlice({
       state.value = action.payload < 6 ? state.length : action.payload;
     },
     dotCar() {},
-    removeCar(state, action) {
-      const id = action.payload;
-      const updatedCars = state.displayedCars.filter((car) => car.id !== id);
-      const removedCar = state.cars.find((car) => car.id === id);
-      return {
-        ...state,
-        displayedCars: updatedCars,
-        removedCars: [...state.removedCars, removedCar],
-      };
-    },
-    recoverCar(state, action) {
-      const index = state.removedCars.indexOf(action.payload);
-      if (index !== -1) {
-        const recoveredCar = state.removedCars.splice(index, 1)[0];
-        state.cars.push(recoveredCar);
-      }
-    },
   },
   extraReducers: {
     [getCars.pending]: (state) => {
@@ -121,7 +124,6 @@ const carsSlice = createSlice({
       }));
       state.isLoading = false;
       state.cars = newdata;
-      state.displayedCars = newdata;
       state.length = newdata.length;
       state.value = newdata.length - (newdata.length - 1);
     },
@@ -134,7 +136,6 @@ const carsSlice = createSlice({
     [addCar.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.cars = action.payload.status.data;
-      state.displayedCars = action.payload.status.data;
       console.log(action.payload.status.data);
     },
     [addCar.rejected]: (state, action) => {
@@ -153,11 +154,22 @@ const carsSlice = createSlice({
       state.isLoading = false;
       state.isError = true;
     },
+    [deleteCar.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [deleteCar.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      console.log(action.payload.status.data);
+      console.log(action.payload);
+    },
+    [deleteCar.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+      console.log(action);
+    },
   },
 });
 
-export const {
-  nextCar, prevCar, dotCar, removeCar, recoverCar,
-} = carsSlice.actions;
+export const { nextCar, prevCar, dotCar } = carsSlice.actions;
 
 export default carsSlice.reducer;
