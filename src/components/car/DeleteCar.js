@@ -1,16 +1,21 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteCar, getCars } from '../../redux/cars/carsSlice';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteCar, getCars } from "../../redux/cars/carsSlice";
 
 const DeleteCar = () => {
-  const { cars, isLoading } = useSelector((state) => state.cars);
+  const { cars, isLoading, isUpdated } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCars());
   }, [dispatch]);
 
+  if (isUpdated) {
+    dispatch(getCars());
+  }
+
   const handleDeleteCar = (carId) => {
+    console.log(carId);
     dispatch(deleteCar({ carId }));
   };
 
@@ -22,21 +27,23 @@ const DeleteCar = () => {
     );
   }
 
-  return (
-    <section>
-      {cars.map((car) => (
-        <div key={car.id}>
-          <p>
-            {car.name}
-          </p>
-          <button onClick={() => handleDeleteCar(car.id)} type="button">
-            Delete
-            {car.name}
-          </button>
-        </div>
-      ))}
-    </section>
-  );
+  if (cars) {
+    return (
+      <section>
+        {cars.map((car) => (
+          <div key={car.id}>
+            <p>{car.name}</p>
+            <button onClick={() => handleDeleteCar(car.id)} type="button">
+              Delete
+              {car.name}
+            </button>
+          </div>
+        ))}
+      </section>
+    );
+  }
+
+  return <p>Error loading cars</p>;
 };
 
 export default DeleteCar;

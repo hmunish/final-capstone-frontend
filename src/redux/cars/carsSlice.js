@@ -12,6 +12,7 @@ const initialState = {
   value: null,
   length: null,
   car: null,
+  isUpdated: false,
   displayedCars: [],
   removedCars: [],
 };
@@ -32,11 +33,20 @@ export const getCars = createAsyncThunk("cars/getCars", async (_, thunkAPI) => {
 
 export const addCar = createAsyncThunk(
   "cars/addCar",
-  async ({
-    userId,
-    name, image, description, deposit,
-    financeFee, optionToPurchaseFee, totalAmountPayable, duration,
-  }, thunkAPI) => {
+  async (
+    {
+      userId,
+      name,
+      image,
+      description,
+      deposit,
+      financeFee,
+      optionToPurchaseFee,
+      totalAmountPayable,
+      duration,
+    },
+    thunkAPI,
+  ) => {
     try {
       const response = await axios.post(
         `${API_URL}/users/${userId}/cars`,
@@ -124,6 +134,7 @@ const carsSlice = createSlice({
       }));
       state.isLoading = false;
       state.cars = newdata;
+      state.isUpdated = false;
       state.length = newdata.length;
       state.value = newdata.length - (newdata.length - 1);
     },
@@ -136,7 +147,6 @@ const carsSlice = createSlice({
     [addCar.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.cars = action.payload.status.data;
-      console.log(action.payload.status.data);
     },
     [addCar.rejected]: (state, action) => {
       state.isLoading = false;
@@ -159,6 +169,7 @@ const carsSlice = createSlice({
     },
     [deleteCar.fulfilled]: (state, action) => {
       state.isLoading = false;
+      state.isUpdated = true;
       console.log(action.payload.status.data);
       console.log(action.payload);
     },
