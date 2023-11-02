@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCars } from '../../redux/cars/carsSlice';
+import { getCars, removeCar } from '../../redux/cars/carsSlice';
 
 const DeleteCar = () => {
   const { cars, isLoading } = useSelector((state) => state.cars);
@@ -10,7 +10,8 @@ const DeleteCar = () => {
     dispatch(getCars());
   }, [dispatch, cars.length]);
 
-  const handleDeleteCar = () => {
+  const handleDeleteCar = (e) => {
+    dispatch(removeCar(e));
   };
 
   if (isLoading) {
