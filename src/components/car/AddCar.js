@@ -64,7 +64,7 @@ const AddCar = () => {
             <label htmlFor="image">
               Image:
               <br />
-              <input type="file" id="image" name="image" required />
+              <input type="text" id="image" name="image" required />
             </label>
           </li>
 
