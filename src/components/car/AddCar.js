@@ -1,6 +1,6 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addCar } from '../../redux/cars/carsSlice';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addCar } from "../../redux/cars/carsSlice";
 
 const AddCar = () => {
   const { isLoading } = useSelector((state) => state.cars);
@@ -17,14 +17,16 @@ const AddCar = () => {
     const optionToPurchaseFee = e.target.optionToPurchaseFee.value;
     const totalAmountPayable = e.target.totalAmountPayable.value;
     const duration = e.target.duration.value;
-    console.log(name,
+    console.log(
+      name,
       image,
       description,
       deposit,
       financeFee,
       optionToPurchaseFee,
       totalAmountPayable,
-      duration);
+      duration,
+    );
 
     dispatch(
       addCar({
@@ -50,14 +52,22 @@ const AddCar = () => {
   }
 
   return (
-    <section>
+    <section className="add-new-car">
+      <div className="green-overlay" />
       <form onSubmit={(e) => handleAddCar(e)}>
         <ul>
           <li>
             <label htmlFor="name">
               Name:
               <br />
-              <input type="text" id="name" maxLength={30} name="name" required placeholder="Car Name" />
+              <input
+                type="text"
+                id="name"
+                maxLength={30}
+                name="name"
+                required
+                placeholder="Car Name"
+              />
             </label>
           </li>
           <li>
@@ -71,42 +81,83 @@ const AddCar = () => {
             <label htmlFor="description">
               Description:
               <br />
-              <input type="text" id="description" name="description" required placeholder="Model" />
+              <input
+                type="text"
+                id="description"
+                name="description"
+                required
+                placeholder="Model"
+              />
             </label>
           </li>
           <li>
             <label htmlFor="deposit">
               Deposit:
               <br />
-              <input type="number" id="deposit" name="deposit" required placeholder="Deposit" min="0" />
+              <input
+                type="number"
+                id="deposit"
+                name="deposit"
+                required
+                placeholder="Deposit"
+                min="0"
+              />
             </label>
           </li>
           <li>
             <label htmlFor="financeFee">
               Finance Fee:
               <br />
-              <input type="number" id="financeFee" name="financeFee" required placeholder="Finance Fee" min="0" />
+              <input
+                type="number"
+                id="financeFee"
+                name="financeFee"
+                required
+                placeholder="Finance Fee"
+                min="0"
+              />
             </label>
           </li>
           <li>
             <label htmlFor="optionToPurchaseFee">
               Option to Purchase Fee:
               <br />
-              <input type="number" id="optionToPurchaseFee" name="optionToPurchaseFee" required placeholder="Option to Purchase Fee" min="0" />
+              <input
+                type="number"
+                id="optionToPurchaseFee"
+                name="optionToPurchaseFee"
+                required
+                placeholder="Option to Purchase Fee"
+                min="0"
+              />
             </label>
           </li>
           <li>
             <label htmlFor="totalAmountPayable">
               Total Amount Payable:
               <br />
-              <input type="number" id="totalAmountPayable" name="totalAmountPayable" required placeholder="Total Amount Payable" min="0" />
+              <input
+                type="number"
+                id="totalAmountPayable"
+                name="totalAmountPayable"
+                required
+                placeholder="Total Amount Payable"
+                min="0"
+              />
             </label>
           </li>
           <li>
             <label htmlFor="Duration">
               Duration:
               <br />
-              <input type="number" id="duration" name="duration" required placeholder="Duration (Months)" min="0" />
+              <input
+                type="number"
+                id="duration"
+                name="duration"
+                required
+                placeholder="Duration (Months)"
+                min="0"
+              />
             </label>
           </li>
           <input type="submit" value="Add Car" />

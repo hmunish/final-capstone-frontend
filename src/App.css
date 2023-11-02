@@ -77,7 +77,8 @@ main {
 /* Add reservation page starts here */
 
 section.add-reservation,
-section.reservation-list {
+section.reservation-list,
+section.add-new-car {
   width: 100%;
   min-height: 100vh;
   background: url(./assets/cars-bg-home.png) center no-repeat;
