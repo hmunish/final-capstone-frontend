@@ -12,6 +12,7 @@ const initialState = {
   value: null,
   length: null,
   car: null,
+  displayedCars: [],
   removedCars: [],
 };
 
@@ -90,13 +91,13 @@ const carsSlice = createSlice({
     dotCar() {},
     removeCar(state, action) {
       const id = action.payload;
-      const index = state.cars.findIndex((car) => car.id === id);
-      if (index !== -1) {
-        const removedCar = state.cars.splice(index, 1)[0];
-        state.removedCars.push(removedCar);
-        console.log(state.removedCars, 'removed cars');
-        console.log(state.cars, 'cars');
-      }
+      const updatedCars = state.displayedCars.filter((car) => car.id !== id);
+      const removedCar = state.cars.find((car) => car.id === id);
+      return {
+        ...state,
+        displayedCars: updatedCars,
+        removedCars: [...state.removedCars, removedCar],
+      };
     },
     recoverCar(state, action) {
       const index = state.removedCars.indexOf(action.payload);
@@ -120,6 +121,7 @@ const carsSlice = createSlice({
       }));
       state.isLoading = false;
       state.cars = newdata;
+      state.displayedCars = newdata;
       state.length = newdata.length;
       state.value = newdata.length - (newdata.length - 1);
     },
@@ -132,6 +134,7 @@ const carsSlice = createSlice({
     [addCar.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.cars = action.payload.status.data;
+      state.displayedCars = action.payload.status.data;
       console.log(action.payload.status.data);
     },
     [addCar.rejected]: (state, action) => {
