@@ -31,14 +31,8 @@ export const addCar = createAsyncThunk(
   "cars/addCar",
   async ({
     userId,
-    name,
-    image,
-    description,
-    deposit,
-    financeFee,
-    optionToPurchaseFee,
-    totalAmountPayable,
-    duration,
+    name, image, description, deposit,
+    financeFee, optionToPurchaseFee, totalAmountPayable, duration,
   }, thunkAPI) => {
     try {
       const response = await axios.post(
@@ -48,9 +42,9 @@ export const addCar = createAsyncThunk(
           image,
           description,
           deposit,
-          financeFee,
-          optionToPurchaseFee,
-          totalAmountPayable,
+          finance_fee: financeFee,
+          option_to_purchase_fee: optionToPurchaseFee,
+          total_amount_payable: totalAmountPayable,
           duration,
         },
         {
