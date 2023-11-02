@@ -69,7 +69,7 @@ const AddCar = () => {
           </li>
           <li>
             <label htmlFor="description">
-              Description
+              Description:
               <br />
               <input type="text" id="description" name="description" required placeholder="Model" />
             </label>
