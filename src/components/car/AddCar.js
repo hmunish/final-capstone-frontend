@@ -67,9 +67,12 @@ const AddCar = () => {
               <input type="text" id="image" name="image" required />
             </label>
           </li>
-
           <li>
-            <input type="text" id="description" name="description" required placeholder="Model" />
+            <label htmlFor="description">
+              Description
+              <br />
+              <input type="text" id="description" name="description" required placeholder="Model" />
+            </label>
           </li>
           <li>
             <label htmlFor="deposit">
@@ -103,7 +106,7 @@ const AddCar = () => {
             <label htmlFor="Duration">
               Duration:
               <br />
-              <input type="number" id="duration" name="duration" required placeholder="Duration (Days)" min="0" />
+              <input type="number" id="duration" name="duration" required placeholder="Duration (Months)" min="0" />
             </label>
           </li>
           <input type="submit" value="Add Car" />
