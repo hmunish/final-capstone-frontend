@@ -87,6 +87,10 @@ const carsSlice = createSlice({
       state.value = action.payload < 6 ? state.length : action.payload;
     },
     dotCar() {},
+    removeCar(state, action) {
+      const filteredCars = state.cars((car) => car.id !== action.payload);
+      state.cars = filteredCars;
+    },
   },
   extraReducers: {
     [getCars.pending]: (state) => {
