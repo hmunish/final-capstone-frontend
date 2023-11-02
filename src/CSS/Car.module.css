@@ -10,12 +10,14 @@
 
 .carImg {
   width: 100%;
+  cursor: pointer;
 }
 
 .carDetailsBox {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  cursor: pointer;
 }
 
 .carName {

@@ -9,6 +9,7 @@ const initialState = {
   error: null,
   value: null,
   length: null,
+  car: null,
 };
 
 export const getCars = createAsyncThunk("cars/getCars", async (_, thunkAPI) => {
@@ -24,6 +25,20 @@ export const getCars = createAsyncThunk("cars/getCars", async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue("Error fetching cars");
   }
 });
+
+export const getCarById = createAsyncThunk(
+  "cars/getCarById",
+  async ({ userId, carId }, thunkAPI) => {
+    try {
+      const response = await axios.get(
+        `${API_URL}/users/${userId}/cars/${carId}`,
+      );
+      return response;
+    } catch (error) {
+      return thunkAPI.rejectWithValue("Error fetching car by Id");
+    }
+  },
+);
 
 const carsSlice = createSlice({
   name: "cars",
@@ -47,6 +62,7 @@ const carsSlice = createSlice({
         id: car.id,
         name: car.name,
         description: car.description,
+        image: car.image,
       }));
       state.isLoading = false;
       state.cars = newdata;
@@ -55,6 +71,18 @@ const carsSlice = createSlice({
     },
     [getCars.rejected]: (state) => {
       state.isLoading = false;
+    },
+    [getCarById.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [getCarById.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      const data = action.payload;
+      state.car = data.data;
+    },
+    [getCarById.rejected]: (state) => {
+      state.isLoading = false;
+      state.isError = true;
     },
   },
 });

@@ -31,6 +31,7 @@ const Cars = () => {
         {cars.map((car) => (
           <div key={car.id}>
             <Car
+              id={car.id}
               name={car.name}
               image={car.image}
               description={car.description}
