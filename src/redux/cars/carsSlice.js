@@ -27,40 +27,45 @@ export const getCars = createAsyncThunk("cars/getCars", async (_, thunkAPI) => {
   }
 });
 
-export const addCar = createAsyncThunk("cars/addCar", async ({
-  userId,
-  name,
-  image,
-  description,
-  deposit,
-  financeFee,
-  optionToPurchaseFee,
-  totalAmountPayable,
-  duration,
-}, thunkAPI) => {
-  try {
-    const response = await axios.post(`${API_URL}/users/${userId}/cars`,
-      {
-        name,
-        image,
-        description,
-        deposit,
-        financeFee,
-        optionToPurchaseFee,
-        totalAmountPayable,
-        duration,
-      },
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
+export const addCar = createAsyncThunk(
+  "cars/addCar",
+  async ({
+    userId,
+    name,
+    image,
+    description,
+    deposit,
+    financeFee,
+    optionToPurchaseFee,
+    totalAmountPayable,
+    duration,
+  }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        `${API_URL}/users/${userId}/cars`,
+        {
+          name,
+          image,
+          description,
+          deposit,
+          financeFee,
+          optionToPurchaseFee,
+          totalAmountPayable,
+          duration,
         },
-      });
-    if (response.status !== 201) throw new Error("error");
-    return response;
-  } catch (error) {
-    return thunkAPI.rejectWithValue("Error adding reservation");
-  }
-});
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        },
+      );
+      if (response.status !== 201) throw new Error("error");
+      return response;
+    } catch (error) {
+      return thunkAPI.rejectWithValue("Error adding reservation");
+    }
+  },
+);
 
 const carsSlice = createSlice({
   name: "cars",
