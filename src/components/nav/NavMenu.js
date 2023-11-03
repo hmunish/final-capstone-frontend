@@ -112,6 +112,7 @@ const NavMenu = () => {
               </li>
             </ul>
           </div>
+          <div className="navRights">2023 All rights reserved</div>
         </div>
       )}
     </section>
