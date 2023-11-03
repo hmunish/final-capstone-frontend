@@ -167,16 +167,13 @@ const carsSlice = createSlice({
     [deleteCar.pending]: (state) => {
       state.isLoading = true;
     },
-    [deleteCar.fulfilled]: (state, action) => {
+    [deleteCar.fulfilled]: (state) => {
       state.isLoading = false;
       state.isUpdated = true;
-      console.log(action.payload.status.data);
-      console.log(action.payload);
     },
     [deleteCar.rejected]: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
-      console.log(action);
     },
   },
 });
