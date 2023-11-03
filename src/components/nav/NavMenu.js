@@ -88,6 +88,17 @@ const NavMenu = () => {
                   <i className="fa-brands fa-facebook-f" />
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://instagram.com"
+                  onClick={toggleMenu}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="instagram page"
+                >
+                  <i className="fa-brands fa-instagram" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
