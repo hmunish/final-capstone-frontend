@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { UilTwitter, UilFacebookF, UilSignout } from '@iconscout/react-unicons';
+import { UilTwitter, UilFacebookF } from '@iconscout/react-unicons';
 import styles from "../../CSS/NavMenu.module.css";
 import v from "../../assets/v.png";
 import google from "../../assets/google.png";
@@ -69,21 +69,17 @@ const NavMenu = () => {
                 </li>
               </ul>
             </nav>
+            <div className={styles.icons}>
+              <UilTwitter />
+              <UilFacebookF />
+              <img style={{ width: '20px', height: '20px' }} src={v} alt="v icon" />
+              <img style={{ width: '30px', height: '20px', marginLeft: '5px' }} src={google} alt="google icon" />
+              <img style={{ width: '30px', height: '20px', marginLeft: '5px' }} src={pinterest} alt="pinterest icon" />
+            </div>
+            <p />
+            2023 All right reserved
           </div>
           <div />
-          <div className={styles.carSocialBox}>
-            <UilTwitter />
-            <UilFacebookF />
-            <img style={{ width: '20px', height: '20px' }} src={v} alt="v icon" />
-            <img style={{ width: '30px', height: '20px', marginLeft: '5px' }} src={google} alt="google icon" />
-            <img style={{ width: '30px', height: '20px', marginLeft: '5px' }} src={pinterest} alt="pinterest icon" />
-          </div>
-          <p />
-          2023 All right reserved
-
-          <div>
-            <UilSignout />
-          </div>
         </>
       )}
     </section>
