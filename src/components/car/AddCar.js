@@ -44,7 +44,7 @@ const AddCar = () => {
   return (
     <section className="add-new-car">
       <div className="green-overlay" />
-      <form onSubmit={(e) => handleAddCar(e)}>
+      <form className="add-car-form" onSubmit={(e) => handleAddCar(e)}>
         <ul>
           <li>
             <label htmlFor="name">
