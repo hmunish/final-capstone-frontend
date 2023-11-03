@@ -99,6 +99,17 @@ const NavMenu = () => {
                   <i className="fa-brands fa-instagram" />
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://pintrest.com"
+                  onClick={toggleMenu}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="pintrest page"
+                >
+                  <i className="fa-brands fa-pintrest" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
