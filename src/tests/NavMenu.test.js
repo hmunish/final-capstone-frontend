@@ -3,7 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import NavMenu from '../components/nav/NavMenu'
+import NavMenu from '../components/nav/NavMenu';
 import store from '../redux/store';
 
 test('Car Details components Match', () => {
