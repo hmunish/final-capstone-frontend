@@ -15,7 +15,6 @@ const DeleteCar = () => {
   }
 
   const handleDeleteCar = (carId) => {
-    console.log(carId);
     dispatch(deleteCar({ carId }));
   };
 
