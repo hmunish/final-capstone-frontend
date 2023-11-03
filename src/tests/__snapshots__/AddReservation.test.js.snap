@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Car Details components Match 1`] = `
+<section
+  className="add-reservation"
+>
+  <div
+    className="green-overlay"
+  />
+  <div
+    className="wrapper"
+  >
+    <h2>
+      Book a car test-ride
+    </h2>
+    <hr />
+    <p>
+      There are 34 different models of our car. We have showrooms all over the globe which some include test riding facilities. If you wish to find out if a test ride is available in your area, then choose your car, bike, and location below.
+    </p>
+    <form
+      className="reservation-form"
+      onSubmit={[Function]}
+    >
+      <input
+        name="bookingDate"
+        required={true}
+        type="date"
+      />
+      <select
+        name="location"
+        required={true}
+      >
+        <option
+          default={true}
+        >
+          Location
+        </option>
+        <option
+          value="london"
+        >
+          London
+        </option>
+        <option
+          value="newyork"
+        >
+          New York
+        </option>
+        <option
+          value="capetown"
+        >
+          Cape Town
+        </option>
+      </select>
+      <select
+        name="carId"
+        required={true}
+      >
+        <option
+          default={true}
+        >
+          Car Model
+        </option>
+      </select>
+      <input
+        type="submit"
+        value="Book Now"
+      />
+    </form>
+    <p />
+    <p />
+  </div>
+</section>
+`;
