@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { UilTwitter, UilFacebookF, UilSignout } from '@iconscout/react-unicons';
 import styles from "../../CSS/NavMenu.module.css";
+import v from "../../assets/v.png";
+import google from "../../assets/google.png";
+import pinterest from "../../assets/pinterest.png";
 import menu from "../../assets/menu.png";
 import logo from "../../assets/logo.jpg";
 
@@ -17,103 +22,69 @@ const NavMenu = () => {
         <img src={menu} alt="menu" />
       </button>
       {isOpen && (
-        <div className={styles.sidebarMenu}>
-          <img alt="Logo" src={logo} className={styles.logo} />
-          <nav className={styles.navigation}>
-            <ul className={styles.navlist}>
-              <li>
-                <NavLink
-                  className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
-                  to="/"
-                >
-                  Cars
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
-                  to="/reservations"
-                >
-                  Reservations
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
-                  to="/cars/new"
-                >
-                  New Car
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
-                  to="/reservation/new"
-                >
-                  New Reservation
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
-                  to="/cars/delete"
-                >
-                  Delete Car
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
+        <>
+          <div className={styles.sidebarMenu}>
+            <img alt="Logo" src={logo} className={styles.logo} />
+            <nav className={styles.navigation}>
+              <ul className={styles.navlist}>
+                <li>
+                  <NavLink
+                    className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
+                    to="/"
+                  >
+                    Cars
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
+                    to="/reservations"
+                  >
+                    Reservations
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
+                    to="/cars/new"
+                  >
+                    New Car
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
+                    to="/reservation/new"
+                  >
+                    New Reservation
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={({ isActive }) => (isActive ? styles.activeLink : "inactive")}
+                    to="/cars/delete"
+                  >
+                    Delete Car
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div />
+          <div className={styles.carSocialBox}>
+            <UilTwitter />
+            <UilFacebookF />
+            <img style={{ width: '20px', height: '20px' }} src={v} alt="v icon" />
+            <img style={{ width: '30px', height: '20px', marginLeft: '5px' }} src={google} alt="google icon" />
+            <img style={{ width: '30px', height: '20px', marginLeft: '5px' }} src={pinterest} alt="pinterest icon" />
+          </div>
+          <p />
+          2023 All right reserved
 
           <div>
-            <ul className="socialLinks">
-              <li>
-                <a
-                  href="https://twitter.com"
-                  onClick={toggleMenu}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="twitter page"
-                >
-                  <i className="fa-brands fa-twitter" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://facebook.com"
-                  onClick={toggleMenu}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="facebook page"
-                >
-                  <i className="fa-brands fa-facebook-f" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://instagram.com"
-                  onClick={toggleMenu}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="instagram page"
-                >
-                  <i className="fa-brands fa-instagram" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://pintrest.com"
-                  onClick={toggleMenu}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="pintrest page"
-                >
-                  <i className="fa-brands fa-pintrest" />
-                </a>
-              </li>
-            </ul>
+            <UilSignout />
           </div>
-          <div className="navRights">2023 All rights reserved</div>
-        </div>
+        </>
       )}
     </section>
   );
