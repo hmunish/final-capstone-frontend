@@ -4,6 +4,7 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -13,7 +14,6 @@
 
 .navigation {
   width: 75%;
-  margin-top: 10rem;
 }
 
 .navlist {
@@ -37,8 +37,4 @@ a {
 .activeLink {
   background-color: #97bf0f;
   color: #fff;
-}
-
-.icons {
-  margin-top: 10rem;
 }

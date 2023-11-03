@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { UilTwitter, UilFacebookF } from '@iconscout/react-unicons';
+import { UilTwitter, UilFacebookF, UilSignout } from "@iconscout/react-unicons";
 import styles from "../../CSS/NavMenu.module.css";
 import v from "../../assets/v.png";
 import google from "../../assets/google.png";
@@ -14,6 +14,11 @@ const NavMenu = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const signout = () => {
+    localStorage.removeItem("authKey");
+    window.location.pathname = "/";
   };
 
   return (
@@ -69,15 +74,38 @@ const NavMenu = () => {
                 </li>
               </ul>
             </nav>
-            <div className={styles.icons}>
-              <UilTwitter />
-              <UilFacebookF />
-              <img style={{ width: '20px', height: '20px' }} src={v} alt="v icon" />
-              <img style={{ width: '30px', height: '20px', marginLeft: '5px' }} src={google} alt="google icon" />
-              <img style={{ width: '30px', height: '20px', marginLeft: '5px' }} src={pinterest} alt="pinterest icon" />
+            <div className="footer-wrapper">
+              <div
+                className="signout"
+                onClick={() => signout()}
+                role="link"
+                tabIndex={-1}
+                aria-hidden="true"
+              >
+                <UilSignout />
+                <p>Sign Out</p>
+              </div>
+              <div className={styles.icons}>
+                <UilTwitter />
+                <UilFacebookF />
+                <img
+                  style={{ width: "20px", height: "20px" }}
+                  src={v}
+                  alt="v icon"
+                />
+                <img
+                  style={{ width: "30px", height: "20px", marginLeft: "5px" }}
+                  src={google}
+                  alt="google icon"
+                />
+                <img
+                  style={{ width: "30px", height: "20px", marginLeft: "5px" }}
+                  src={pinterest}
+                  alt="pinterest icon"
+                />
+              </div>
+              <p>2023 All right reserved</p>
             </div>
-            <p />
-            2023 All right reserved
           </div>
           <div />
         </>
