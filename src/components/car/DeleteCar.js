@@ -30,7 +30,8 @@ const DeleteCar = () => {
     return (
       <section className="delete-cars-list">
         <div className="green-overlay" />
-        <div className="add-car-form">
+        <div className="cars-to-delete">
+          <h1 className="delete-title">Delete Cars</h1>
           {cars.map((car) => (
             <div className="delete-car-item" key={car.id}>
               <p>{car.name}</p>
