@@ -10,7 +10,7 @@ const Cars = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCars());
-  }, [dispatch, cars.length]);
+  }, [dispatch]);
 
   if (isLoading) {
     return (
@@ -20,28 +20,32 @@ const Cars = () => {
     );
   }
 
-  return (
-    <section className={styles.carsSection}>
-      <div className={styles.titleBox}>
-        <h2>Latest Models</h2>
+  if (cars) {
+    return (
+      <section className={styles.carsSection}>
+        <div className={styles.titleBox}>
+          <h2>Latest Models</h2>
 
-        <p>Please select a car model</p>
-      </div>
-      <div id="slider" className={styles.cars}>
-        {cars.map((car) => (
-          <div key={car.id}>
-            <Car
-              id={car.id}
-              name={car.name}
-              image={car.image}
-              description={car.description}
-            />
-          </div>
-        ))}
-      </div>
-      <Slider />
-    </section>
-  );
+          <p>Please select a car model</p>
+        </div>
+        <div id="slider" className={styles.cars}>
+          {cars.map((car) => (
+            <div key={car.id}>
+              <Car
+                id={car.id}
+                name={car.name}
+                image={car.image}
+                description={car.description}
+              />
+            </div>
+          ))}
+        </div>
+        <Slider />
+      </section>
+    );
+  }
+
+  return <p>Error loading cars</p>;
 };
 
 export default Cars;

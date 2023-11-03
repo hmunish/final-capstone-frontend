@@ -8,7 +8,9 @@ import Cars from "./components/car/Cars";
 import NavMenu from "./components/nav/NavMenu";
 import AddReservation from "./components/reservation/AddReservation";
 import ReservationList from "./components/reservation/ReservationList";
+import AddCar from "./components/car/AddCar";
 import CarDetail from "./components/car/CarDetail";
+import DeleteCar from "./components/car/DeleteCar";
 
 function App() {
   const loginData = useSelector((state) => state.login);
@@ -34,10 +36,12 @@ function App() {
       <NavMenu />
       <Routes>
         <Route path="/signin" element={<Login />} />
+        <Route path="/" element={<Cars />} />
+        <Route path="/cars/new" element={<AddCar />} />
         <Route path="/car/details/:carId?" element={<CarDetail />} />
         <Route path="/reservations" element={<ReservationList />} />
         <Route path="/reservation/new/:carId?" element={<AddReservation />} />
-        <Route path="/" element={<Cars />} />
+        <Route path="/cars/delete" element={<DeleteCar />} />
       </Routes>
     </main>
   );

@@ -3,6 +3,8 @@ import axios from "axios";
 import { getLocalStorageAuth } from "../../utility/helper";
 import { API_URL } from "../../utility/globalVariable";
 
+axios.defaults.headers.common.Authorization = getLocalStorageAuth();
+
 const initialState = {
   cars: [],
   isLoading: false,
@@ -10,6 +12,9 @@ const initialState = {
   value: null,
   length: null,
   car: null,
+  isUpdated: false,
+  displayedCars: [],
+  removedCars: [],
 };
 
 export const getCars = createAsyncThunk("cars/getCars", async (_, thunkAPI) => {
@@ -25,6 +30,69 @@ export const getCars = createAsyncThunk("cars/getCars", async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue("Error fetching cars");
   }
 });
+
+export const addCar = createAsyncThunk(
+  "cars/addCar",
+  async (
+    {
+      userId,
+      name,
+      image,
+      description,
+      deposit,
+      financeFee,
+      optionToPurchaseFee,
+      totalAmountPayable,
+      duration,
+    },
+    thunkAPI,
+  ) => {
+    try {
+      const response = await axios.post(
+        `${API_URL}/users/${userId}/cars`,
+        {
+          name,
+          image,
+          description,
+          deposit,
+          finance_fee: financeFee,
+          option_to_purchase_fee: optionToPurchaseFee,
+          total_amount_payable: totalAmountPayable,
+          duration,
+        },
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        },
+      );
+      if (response.status !== 201) throw new Error("error");
+      return response;
+    } catch (error) {
+      return thunkAPI.rejectWithValue("Error adding reservation");
+    }
+  },
+);
+
+export const deleteCar = createAsyncThunk(
+  "cars/deleteCar",
+  async ({ userId, carId }, thunkAPI) => {
+    try {
+      const response = await axios.delete(
+        `${API_URL}/users/${userId}/cars/${carId}`,
+        {
+          data: {
+            id: carId,
+            user_id: userId,
+          },
+        },
+      );
+      return response;
+    } catch (error) {
+      return thunkAPI.rejectWithValue("Error Deleting Car");
+    }
+  },
+);
 
 export const getCarById = createAsyncThunk(
   "cars/getCarById",
@@ -66,11 +134,23 @@ const carsSlice = createSlice({
       }));
       state.isLoading = false;
       state.cars = newdata;
+      state.isUpdated = false;
       state.length = newdata.length;
       state.value = newdata.length - (newdata.length - 1);
     },
     [getCars.rejected]: (state) => {
       state.isLoading = false;
+    },
+    [addCar.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [addCar.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.cars = action.payload.status.data;
+    },
+    [addCar.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
     },
     [getCarById.pending]: (state) => {
       state.isLoading = true;
@@ -84,8 +164,20 @@ const carsSlice = createSlice({
       state.isLoading = false;
       state.isError = true;
     },
+    [deleteCar.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [deleteCar.fulfilled]: (state) => {
+      state.isLoading = false;
+      state.isUpdated = true;
+    },
+    [deleteCar.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   },
 });
 
 export const { nextCar, prevCar, dotCar } = carsSlice.actions;
+
 export default carsSlice.reducer;
