@@ -63,6 +63,22 @@ const NavMenu = () => {
               </li>
             </ul>
           </nav>
+
+          <div>
+            <ul className="socialLinks">
+              <li>
+                <a
+                  href="https://twitter.com"
+                  onClick={toggleMenu}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="twitter page"
+                >
+                  <i className="fa-brands fa-twitter" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       )}
     </section>
