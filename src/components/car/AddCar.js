@@ -45,8 +45,8 @@ const AddCar = () => {
     <section className="add-new-car">
       <div className="green-overlay" />
       <form className="add-car-form" onSubmit={(e) => handleAddCar(e)}>
-        <ul>
-          <li>
+        <ul className="form-ul">
+          <li className="form-li">
             <label htmlFor="name">
               Name:
               <br />
@@ -60,14 +60,14 @@ const AddCar = () => {
               />
             </label>
           </li>
-          <li>
+          <li className="form-li">
             <label htmlFor="image">
               Image:
               <br />
               <input type="text" id="image" name="image" required />
             </label>
           </li>
-          <li>
+          <li className="form-li">
             <label htmlFor="description">
               Description:
               <br />
@@ -80,7 +80,7 @@ const AddCar = () => {
               />
             </label>
           </li>
-          <li>
+          <li className="form-li">
             <label htmlFor="deposit">
               Deposit:
               <br />
@@ -94,7 +94,7 @@ const AddCar = () => {
               />
             </label>
           </li>
-          <li>
+          <li className="form-li">
             <label htmlFor="financeFee">
               Finance Fee:
               <br />
@@ -108,7 +108,7 @@ const AddCar = () => {
               />
             </label>
           </li>
-          <li>
+          <li className="form-li">
             <label htmlFor="optionToPurchaseFee">
               Option to Purchase Fee:
               <br />
@@ -122,7 +122,7 @@ const AddCar = () => {
               />
             </label>
           </li>
-          <li>
+          <li className="form-li">
             <label htmlFor="totalAmountPayable">
               Total Amount Payable:
               <br />
@@ -136,7 +136,7 @@ const AddCar = () => {
               />
             </label>
           </li>
-          <li>
+          <li className="form-li">
             <label htmlFor="Duration">
               Duration:
               <br />

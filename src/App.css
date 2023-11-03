@@ -203,12 +203,13 @@ div.car-details-img {
 
 .add-car-form {
   z-index: 10;
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   width: 50%;
   margin: auto;
+  border-radius: 2%;
 }
 
-.add-car-form > ul {
+.form-ul {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -216,6 +217,33 @@ div.car-details-img {
   list-style-type: none;
   margin: 1rem;
   color: #fff;
+}
+
+.form-li label {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 0.3rem;
+}
+
+.form-li input {
+  border: 0;
+  border-radius: 2px;
+  padding: 2%;
+}
+
+.form-ul > input {
+  padding: 2%;
+  border-radius: 2px;
+  border: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.form-ul > input:hover {
+  color: #97bf0f;
+  background-color: #fff;
 }
 
 @media screen and (max-width: 750px) {
