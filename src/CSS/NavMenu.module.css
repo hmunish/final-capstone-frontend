@@ -38,3 +38,8 @@ a {
   background-color: #97bf0f;
   color: #fff;
 }
+
+.icons {
+  margin-left: 30px;
+  border: 1px solid black;
+}
