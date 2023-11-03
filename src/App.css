@@ -74,6 +74,18 @@ main {
   width: 100%;
 }
 
+div.signout {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+div.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
 /* Add reservation page starts here */
 
 section.add-reservation,
