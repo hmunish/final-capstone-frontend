@@ -78,7 +78,8 @@ main {
 
 section.add-reservation,
 section.reservation-list,
-section.add-new-car {
+section.add-new-car,
+section.delete-cars-list {
   width: 100%;
   min-height: 100vh;
   background: url(./assets/cars-bg-home.png) center no-repeat;
@@ -233,7 +234,8 @@ div.car-details-img {
   padding: 2%;
 }
 
-.form-ul > input {
+.form-ul > input,
+.delete-btn {
   padding: 2%;
   border-radius: 2px;
   border: 0;
@@ -241,9 +243,20 @@ div.car-details-img {
   color: #fff;
 }
 
-.form-ul > input:hover {
+.form-ul > input:hover,
+.delete-btn:hover {
   color: #97bf0f;
   background-color: #fff;
+}
+
+.delete-car-item {
+  margin: 3%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3%;
+  color: #fff;
+  border: 2px solid white;
+  border-radius: 2px;
 }
 
 @media screen and (max-width: 750px) {

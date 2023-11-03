@@ -28,16 +28,19 @@ const DeleteCar = () => {
 
   if (cars) {
     return (
-      <section>
-        {cars.map((car) => (
-          <div key={car.id}>
-            <p>{car.name}</p>
-            <button onClick={() => handleDeleteCar(car.id)} type="button">
-              Delete
-              {car.name}
-            </button>
-          </div>
-        ))}
+      <section className="delete-cars-list">
+        <div className="green-overlay" />
+        <div className="add-car-form">
+          {cars.map((car) => (
+            <div className="delete-car-item" key={car.id}>
+              <p>{car.name}</p>
+              <button className="delete-btn" onClick={() => handleDeleteCar(car.id)} type="button">
+                Delete
+                {car.name}
+              </button>
+            </div>
+          ))}
+        </div>
       </section>
     );
   }
