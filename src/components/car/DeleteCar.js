@@ -36,7 +36,6 @@ const DeleteCar = () => {
               <p>{car.name}</p>
               <button className="delete-btn" onClick={() => handleDeleteCar(car.id)} type="button">
                 Delete
-                {car.name}
               </button>
             </div>
           ))}
