@@ -77,6 +77,17 @@ const NavMenu = () => {
                   <i className="fa-brands fa-twitter" />
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://facebook.com"
+                  onClick={toggleMenu}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="facebook page"
+                >
+                  <i className="fa-brands fa-facebook-f" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
