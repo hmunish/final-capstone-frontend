@@ -1,2 +1,2 @@
-export const API_URL = 'http://localhost:3000/api/v1';
-export const other = '';
+export const API_URL = "https://car-booking-app-08b6.onrender.com/api/v1";
+export const other = "";
