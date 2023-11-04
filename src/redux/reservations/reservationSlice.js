@@ -16,19 +16,21 @@ export const getReservations = createAsyncThunk(
     try {
       const response = await axios.get(
         `${API_URL}/users/${userId}/reservations`,
-        { headers: { Authorization: getLocalStorageAuth() } }
+        { headers: { Authorization: getLocalStorageAuth() } },
       );
       if (response.status !== 200) throw new Error("Error");
       return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue("Error fetching reservations");
     }
-  }
+  },
 );
 
 export const addReservation = createAsyncThunk(
   "reservation/addReservation",
-  async ({ userId, bookingDate: date, location, carId }, thunkAPI) => {
+  async ({
+    userId, bookingDate: date, location, carId,
+  }, thunkAPI) => {
     try {
       const res = await axios.post(
         `${API_URL}/users/${userId}/reservations`,
@@ -42,14 +44,14 @@ export const addReservation = createAsyncThunk(
             "Content-Type": "multipart/form-data",
             Authorization: getLocalStorageAuth(),
           },
-        }
+        },
       );
       if (res.status !== 201) throw new Error("Error");
       return res;
     } catch (err) {
       return thunkAPI.rejectWithValue("Error adding reservation");
     }
-  }
+  },
 );
 
 export const reservationSlice = createSlice({
