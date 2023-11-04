@@ -131,7 +131,7 @@ npm start
 ## 📆 Kanban Board <a name="kanban-board"></a>
 
 - [Our kanban board](https://github.com/hmunish/final-capstone-backend/projects/1)
-- [Kanban board initial state image]()
+- [Kanban board initial state image](https://user-images.githubusercontent.com/121902704/278095332-df4fd7fb-f38b-4213-9175-4cf6c4edef52.PNG)
 - We are a team of 4 members as stated in the authors section
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
