@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Car Component matches snapshots 1`] = `
+<div
+  aria-hidden="true"
+  className="car"
+  data-carid={null}
+  id="carBox"
+  onClick={[Function]}
+  role="link"
+  tabIndex={null}
+>
+  <div>
+    <img
+      alt="Car"
+      className="carImg"
+      src=""
+    />
+  </div>
+  <div
+    className="carDetailsBox"
+  >
+    <p
+      className="carName"
+    />
+    <p
+      className="carDescription"
+    />
+  </div>
+  <div
+    className="carSocialBox"
+  >
+    <img
+      alt="Social Media Icon"
+      src="fb.png"
+    />
+    <img
+      alt="Social Media Icon"
+      src="twitter.png"
+    />
+    <img
+      alt="Social Media Icon"
+      src="insta.png"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Car Details components Match 1`] = `
+<section
+  className="sidebar"
+>
+  <button
+    className="mobmenu"
+    onClick={[Function]}
+    type="button"
+  >
+    <img
+      alt="menu"
+      src="menu.png"
+    />
+  </button>
+  <div
+    className="sidebarMenu"
+  >
+    <img
+      alt="Logo"
+      className="logo"
+      src="logo.jpg"
+    />
+    <nav
+      className="navigation"
+    >
+      <ul
+        className="navlist"
+      >
+        <li>
+          <a
+            aria-current="page"
+            className="activeLink"
+            href="/"
+            onClick={[Function]}
+          >
+            Cars
+          </a>
+        </li>
+        <li>
+          <a
+            className="inactive"
+            href="/reservations"
+            onClick={[Function]}
+          >
+            Reservations
+          </a>
+        </li>
+        <li>
+          <a
+            className="inactive"
+            href="/cars/new"
+            onClick={[Function]}
+          >
+            New Car
+          </a>
+        </li>
+        <li>
+          <a
+            className="inactive"
+            href="/reservation/new"
+            onClick={[Function]}
+          >
+            New Reservation
+          </a>
+        </li>
+        <li>
+          <a
+            className="inactive"
+            href="/cars/delete"
+            onClick={[Function]}
+          >
+            Delete Car
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div
+      className="footer-wrapper"
+    >
+      <div
+        aria-hidden="true"
+        className="signout"
+        onClick={[Function]}
+        role="link"
+        tabIndex={-1}
+      >
+        <svg
+          fill="currentColor"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4,12a1,1,0,0,0,1,1h7.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H5A1,1,0,0,0,4,12ZM17,2H7A3,3,0,0,0,4,5V8A1,1,0,0,0,6,8V5A1,1,0,0,1,7,4H17a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V16a1,1,0,0,0-2,0v3a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V5A3,3,0,0,0,17,2Z"
+          />
+        </svg>
+        <p>
+          Sign Out
+        </p>
+      </div>
+      <div
+        className="icons"
+      >
+        <svg
+          fill="currentColor"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22,5.8a8.49,8.49,0,0,1-2.36.64,4.13,4.13,0,0,0,1.81-2.27,8.21,8.21,0,0,1-2.61,1,4.1,4.1,0,0,0-7,3.74A11.64,11.64,0,0,1,3.39,4.62a4.16,4.16,0,0,0-.55,2.07A4.09,4.09,0,0,0,4.66,10.1,4.05,4.05,0,0,1,2.8,9.59v.05a4.1,4.1,0,0,0,3.3,4A3.93,3.93,0,0,1,5,13.81a4.9,4.9,0,0,1-.77-.07,4.11,4.11,0,0,0,3.83,2.84A8.22,8.22,0,0,1,3,18.34a7.93,7.93,0,0,1-1-.06,11.57,11.57,0,0,0,6.29,1.85A11.59,11.59,0,0,0,20,8.45c0-.17,0-.35,0-.53A8.43,8.43,0,0,0,22,5.8Z"
+          />
+        </svg>
+        <svg
+          fill="currentColor"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15.12,5.32H17V2.14A26.11,26.11,0,0,0,14.26,2C11.54,2,9.68,3.66,9.68,6.7V9.32H6.61v3.56H9.68V22h3.68V12.88h3.06l.46-3.56H13.36V7.05C13.36,6,13.64,5.32,15.12,5.32Z"
+          />
+        </svg>
+        <img
+          alt="v icon"
+          src="v.png"
+          style={
+            Object {
+              "height": "20px",
+              "width": "20px",
+            }
+          }
+        />
+        <img
+          alt="google icon"
+          src="google.png"
+          style={
+            Object {
+              "height": "20px",
+              "marginLeft": "5px",
+              "width": "30px",
+            }
+          }
+        />
+        <img
+          alt="pinterest icon"
+          src="pinterest.png"
+          style={
+            Object {
+              "height": "20px",
+              "marginLeft": "5px",
+              "width": "30px",
+            }
+          }
+        />
+      </div>
+      <p>
+        2023 All right reserved
+      </p>
+    </div>
+  </div>
+  <div />
+</section>
+`;

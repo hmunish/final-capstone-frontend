@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Car Details components Match 1`] = `
+<section
+  className="delete-cars-list"
+>
+  <div
+    className="green-overlay"
+  />
+  <div
+    className="cars-to-delete"
+  >
+    <h1
+      className="delete-title"
+    >
+      Delete Cars
+    </h1>
+  </div>
+</section>
+`;

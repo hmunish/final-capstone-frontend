@@ -1,68 +1,197 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-## Available Scripts
+# 📗 Table of Contents 
 
-In the project directory, you can run:
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Final group capstone - Book an Appointment To rent a car ](#-final-group-capstone---book-an-appointment-to-rent-a-car-)
+  - [🚀 Backend App ](#-backend-app-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Install](#install)
+    - [Usage](#usage)
+  - [👥 Authors ](#-authors-)
+  - [📆 Kanban Board ](#-kanban-board-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+    - [Acknowledgments](#acknowledgments)
+      - [Development Team](#development-team)
+      - [Institution](#institution)
+      - [Reference Design](#reference-design)
+  - [📝 License ](#-license-)
 
-### `npm start`
+<!-- PROJECT DESCRIPTION -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 📖 Final group capstone - Book an Appointment To rent a car <a name="about-project"></a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**[Description]**
 
-### `npm test`
+The project we built for the Final Project is based on an app to book an appointment of a Car in the world. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Backend App <a name="back-end"></a>
+- [Click here to navigate to the Backend ](https://github.com/hmunish/final-capstone-backend)
 
-### `npm run build`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠 Built With <a name="built-with"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tech Stack <a name="tech-stack"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Ruby on Rails >=7
+- React
+- Postgres
 
-### `npm run eject`
+### Key Features <a name="key-features"></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Connection between Ruby on Rails and React in different apps
+- Book an appointment to try a Car
+- Cars that you selected as a theme
+- Reserve form
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- LIVE DEMO -->
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 Live Demo <a name="live-demo"></a>
 
-## Learn More
+- [Live Demo Link]() 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- GETTING STARTED -->
 
-### Code Splitting
+## 💻 Getting Started <a name="getting-started"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Prerequisites
 
-### Analyzing the Bundle Size
+- [Ruby on Rails >=7](https://rubyonrails.org/)
+- [React](https://reactjs.org/)
+- [Postgres](https://www.postgresql.org/)
+- [Git](https://git-scm.com/downloads)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Install
 
-### Making a Progressive Web App
+```
+git clone https://github.com/hmunish/final-capstone-backend.git
+cd final-capstone-backend
+bundle install
+```
+```
+git clone https://github.com/hmunish/final-capstone-frontend.git
+cd final-capstone-frontend
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Usage
 
-### Advanced Configuration
+\`\`\`
+rails s
+\`\`\`
+\`\`\`
+npm start
+\`\`\`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Deployment
+<!-- AUTHORS -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 👥 Authors <a name="authors"></a>
 
-### `npm run build` fails to minify
+👤 **Abdourahmane Jalloh**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub: [aradradev](https://github.com/aradradev)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/abdul-jalloh)
+
+
+👤 **Faranosh Amini**
+
+- GitHub: [FaranoshAmini](https://github.com/FaranoshAmini)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/faranosh-amini-9b925b23a/)
+
+
+👤 **Munish Halai**
+
+- GitHub: [hmunish](https://github.com/hmunish)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/munish-halai/)
+
+
+👤 **Sunga Thawethe**
+
+- GitHub: [sunga12](https://github.com/sunga12)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sungabanja-thawethe/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Kanban Board -->
+
+## 📆 Kanban Board <a name="kanban-board"></a>
+
+- [Our kanban board](https://github.com/hmunish/final-capstone-backend/projects/1)
+- [Kanban board initial state image]()
+- We are a team of 4 members as stated in the authors section
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- Add different categories of cars
+- Add online shopping
+- Add extra styling
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you found this project helpful, consider giving a ⭐️!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+### Acknowledgments
+
+We would like to express our deepest gratitude to all the people and institutions that have contributed to make this project possible.
+
+#### Development Team
+- **Abdourahmane Jalloh**: Thank you for your dedication and hard work throughout this project.
+- **Faranosh Amini**: Your expertise and commitment have been invaluable to the team.
+- **Munish Halai3**: Your contributions have made a significant impact on our success.
+- **Sunga Thawethe**: Your skills and teamwork have been much appreciated.
+
+Thank you, team, for your collaboration and effort! 🙌🏼🚀
+
+#### Institution
+- **Microverse**: My sincerest thanks for creating this bootcamp. The program's structure and the quality of education provided have been crucial for my growth as a developer.
+
+#### Reference Design
+- I would also like to thank [<a href="https://www.behance.net/muratk">Murat Korkmaz</a>] for the original design on Behance that served as inspiration for this project.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

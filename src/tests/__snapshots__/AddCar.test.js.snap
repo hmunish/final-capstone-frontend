@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Car Component matches snapshots 1`] = `
+<section
+  className="add-new-car"
+>
+  <div
+    className="green-overlay"
+  />
+  <form
+    className="add-car-form"
+    onSubmit={[Function]}
+  >
+    <h1
+      className="delete-title"
+    >
+      Add a New Car
+    </h1>
+    <ul
+      className="form-ul"
+    >
+      <li
+        className="form-li"
+      >
+        <label
+          htmlFor="name"
+        >
+          Name:
+          <br />
+          <input
+            id="name"
+            maxLength={30}
+            name="name"
+            placeholder="Car Name"
+            required={true}
+            type="text"
+          />
+        </label>
+      </li>
+      <li
+        className="form-li"
+      >
+        <label
+          htmlFor="image"
+        >
+          Image:
+          <br />
+          <input
+            id="image"
+            name="image"
+            required={true}
+            type="text"
+          />
+        </label>
+      </li>
+      <li
+        className="form-li"
+      >
+        <label
+          htmlFor="description"
+        >
+          Description:
+          <br />
+          <input
+            id="description"
+            name="description"
+            placeholder="Model"
+            required={true}
+            type="text"
+          />
+        </label>
+      </li>
+      <li
+        className="form-li"
+      >
+        <label
+          htmlFor="deposit"
+        >
+          Deposit:
+          <br />
+          <input
+            id="deposit"
+            min="0"
+            name="deposit"
+            placeholder="Deposit"
+            required={true}
+            type="number"
+          />
+        </label>
+      </li>
+      <li
+        className="form-li"
+      >
+        <label
+          htmlFor="financeFee"
+        >
+          Finance Fee:
+          <br />
+          <input
+            id="financeFee"
+            min="0"
+            name="financeFee"
+            placeholder="Finance Fee"
+            required={true}
+            type="number"
+          />
+        </label>
+      </li>
+      <li
+        className="form-li"
+      >
+        <label
+          htmlFor="optionToPurchaseFee"
+        >
+          Option to Purchase Fee:
+          <br />
+          <input
+            id="optionToPurchaseFee"
+            min="0"
+            name="optionToPurchaseFee"
+            placeholder="Option to Purchase Fee"
+            required={true}
+            type="number"
+          />
+        </label>
+      </li>
+      <li
+        className="form-li"
+      >
+        <label
+          htmlFor="totalAmountPayable"
+        >
+          Total Amount Payable:
+          <br />
+          <input
+            id="totalAmountPayable"
+            min="0"
+            name="totalAmountPayable"
+            placeholder="Total Amount Payable"
+            required={true}
+            type="number"
+          />
+        </label>
+      </li>
+      <li
+        className="form-li"
+      >
+        <label
+          htmlFor="Duration"
+        >
+          Duration:
+          <br />
+          <input
+            id="duration"
+            min="0"
+            name="duration"
+            placeholder="Duration (Months)"
+            required={true}
+            type="number"
+          />
+        </label>
+      </li>
+      <input
+        type="submit"
+        value="Add Car"
+      />
+    </ul>
+  </form>
+</section>
+`;
