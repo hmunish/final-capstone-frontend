@@ -3,8 +3,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { API_URL } from "../../utility/globalVariable";
 import { getLocalStorageAuth } from "../../utility/helper";
 
-axios.defaults.headers.common.Authorization = getLocalStorageAuth();
-
 const initialState = {
   isError: false,
   isLoading: false,
@@ -18,6 +16,7 @@ export const getReservations = createAsyncThunk(
     try {
       const response = await axios.get(
         `${API_URL}/users/${userId}/reservations`,
+        { headers: { Authorization: getLocalStorageAuth() } },
       );
       if (response.status !== 200) throw new Error("Error");
       return response.data;
@@ -43,6 +42,7 @@ export const addReservation = createAsyncThunk(
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            Authorization: getLocalStorageAuth(),
           },
         },
       );

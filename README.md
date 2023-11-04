@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-# 📗 Table of Contents 
+# 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Final group capstone - Book an Appointment To rent a car ](#-final-group-capstone---book-an-appointment-to-rent-a-car-)
@@ -31,9 +31,10 @@
 
 **[Description]**
 
-The project we built for the Final Project is based on an app to book an appointment of a Car in the world. 
+The project we built for the Final Project is based on an app to book an appointment of a Car in the world.
 
 ## 🚀 Backend App <a name="back-end"></a>
+
 - [Click here to navigate to the Backend ](https://github.com/hmunish/final-capstone-backend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -59,7 +60,7 @@ The project we built for the Final Project is based on an app to book an appoint
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]() 
+- [Live Demo](https://car-booking-frontend.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,6 +82,7 @@ git clone https://github.com/hmunish/final-capstone-backend.git
 cd final-capstone-backend
 bundle install
 ```
+
 ```
 git clone https://github.com/hmunish/final-capstone-frontend.git
 cd final-capstone-frontend
@@ -107,18 +109,15 @@ npm start
 - GitHub: [aradradev](https://github.com/aradradev)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/abdul-jalloh)
 
-
 👤 **Faranosh Amini**
 
 - GitHub: [FaranoshAmini](https://github.com/FaranoshAmini)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/faranosh-amini-9b925b23a/)
 
-
 👤 **Munish Halai**
 
 - GitHub: [hmunish](https://github.com/hmunish)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/munish-halai/)
-
 
 👤 **Sunga Thawethe**
 
@@ -132,7 +131,7 @@ npm start
 ## 📆 Kanban Board <a name="kanban-board"></a>
 
 - [Our kanban board](https://github.com/hmunish/final-capstone-backend/projects/1)
-- [Kanban board initial state image]()
+- [Kanban board initial state image](https://user-images.githubusercontent.com/121902704/278095332-df4fd7fb-f38b-4213-9175-4cf6c4edef52.PNG)
 - We are a team of 4 members as stated in the authors section
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -172,6 +171,7 @@ If you found this project helpful, consider giving a ⭐️!
 We would like to express our deepest gratitude to all the people and institutions that have contributed to make this project possible.
 
 #### Development Team
+
 - **Abdourahmane Jalloh**: Thank you for your dedication and hard work throughout this project.
 - **Faranosh Amini**: Your expertise and commitment have been invaluable to the team.
 - **Munish Halai3**: Your contributions have made a significant impact on our success.
@@ -180,11 +180,12 @@ We would like to express our deepest gratitude to all the people and institution
 Thank you, team, for your collaboration and effort! 🙌🏼🚀
 
 #### Institution
+
 - **Microverse**: My sincerest thanks for creating this bootcamp. The program's structure and the quality of education provided have been crucial for my growth as a developer.
 
 #### Reference Design
-- I would also like to thank [<a href="https://www.behance.net/muratk">Murat Korkmaz</a>] for the original design on Behance that served as inspiration for this project.
 
+- I would also like to thank [<a href="https://www.behance.net/muratk">Murat Korkmaz</a>] for the original design on Behance that served as inspiration for this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
