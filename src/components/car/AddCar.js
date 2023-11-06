@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCar } from "../../redux/cars/carsSlice";
 
 const AddCar = () => {
-  const { isLoading } = useSelector((state) => state.cars);
+  const { isLoading, isCreated, isCreatedError } = useSelector(
+    (state) => state.cars,
+  );
   const { userId } = useSelector((state) => state.login);
   const dispatch = useDispatch();
 
@@ -153,6 +155,8 @@ const AddCar = () => {
           </li>
           <input type="submit" value="Add Car" />
         </ul>
+        {isCreated && <p>Car added successfully</p>}
+        {isCreatedError && <p>{isCreatedError}</p>}
       </form>
     </section>
   );

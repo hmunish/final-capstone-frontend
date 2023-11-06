@@ -1,9 +1,9 @@
-import { Link, useLocation } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import Signup from '../signup/signup';
-import { logIn } from '../../redux/login/loginSlice';
+import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import Signup from "../signup/signup";
+import { logIn } from "../../redux/login/loginSlice";
 
-function Login() {
+const Login = () => {
   const loginData = useSelector((state) => state.login);
   const dispatch = useDispatch();
   const location = useLocation();
@@ -15,9 +15,9 @@ function Login() {
   };
 
   // Checking if user is already login, if yes redirect to home page
-  if (loginData.isLogIn) window.location.pathname = '/';
+  if (loginData.isLogIn) window.location.pathname = "/";
 
-  if (location.pathname === '/signup') {
+  if (location.pathname === "/signup") {
     return <Signup />;
   }
 
@@ -39,6 +39,6 @@ function Login() {
       </Link>
     </section>
   );
-}
+};
 
 export default Login;

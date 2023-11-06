@@ -12,7 +12,7 @@ import AddCar from "./components/car/AddCar";
 import CarDetail from "./components/car/CarDetail";
 import DeleteCar from "./components/car/DeleteCar";
 
-function App() {
+const App = () => {
   const loginData = useSelector((state) => state.login);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -45,6 +45,6 @@ function App() {
       </Routes>
     </main>
   );
-}
+};
 
 export default App;

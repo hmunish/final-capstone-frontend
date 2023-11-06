@@ -282,6 +282,10 @@ div.car-details-img {
   div.car-details-img {
     background-size: 500px;
   }
+
+  .sidebar {
+    position: fixed;
+  }
 }
 
 @media screen and (max-width: 600px) {

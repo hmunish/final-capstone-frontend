@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { getCars } from "../../redux/cars/carsSlice";
 import { addReservation } from "../../redux/reservations/reservationSlice";
 
-function AddReservation() {
+const AddReservation = () => {
   const { cars, isLoading } = useSelector((state) => state.cars);
   const { isCreated, isError } = useSelector((state) => state.reservations);
   const { userId } = useSelector((state) => state.login);
@@ -81,6 +81,6 @@ function AddReservation() {
       </div>
     </section>
   );
-}
+};
 
 export default AddReservation;
