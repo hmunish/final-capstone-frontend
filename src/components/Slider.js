@@ -1,12 +1,8 @@
 import React from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { nextCar } from "../redux/cars/carsSlice";
 import styles from "../CSS/Slider.module.css";
 import arrow from "../assets/arrow.png";
 
 const Slider = () => {
-  // const sliderIndex = useSelector((state) => state.cars.value);
-  // const dispatch = useDispatch();
   const slider = document.querySelector("#slider");
   const slideLeft = () => {
     const leftMargin = +window.getComputedStyle(slider).marginLeft.slice(0, -2);

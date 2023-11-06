@@ -4,6 +4,7 @@ import { deleteCar, getCars } from "../../redux/cars/carsSlice";
 
 const DeleteCar = () => {
   const { cars, isLoading, isUpdated } = useSelector((state) => state.cars);
+  const { userId } = useSelector((state) => state.login);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,7 +16,7 @@ const DeleteCar = () => {
   }
 
   const handleDeleteCar = (carId) => {
-    dispatch(deleteCar({ carId }));
+    dispatch(deleteCar({ userId, carId }));
   };
 
   if (isLoading) {
@@ -35,7 +36,11 @@ const DeleteCar = () => {
           {cars.map((car) => (
             <div className="delete-car-item" key={car.id}>
               <p>{car.name}</p>
-              <button className="delete-btn" onClick={() => handleDeleteCar(car.id)} type="button">
+              <button
+                className="delete-btn"
+                onClick={() => handleDeleteCar(car.id)}
+                type="button"
+              >
                 Delete
               </button>
             </div>

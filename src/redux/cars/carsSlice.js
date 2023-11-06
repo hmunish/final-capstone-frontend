@@ -3,8 +3,6 @@ import axios from "axios";
 import { getLocalStorageAuth } from "../../utility/helper";
 import { API_URL } from "../../utility/globalVariable";
 
-axios.defaults.headers.common.Authorization = getLocalStorageAuth();
-
 const initialState = {
   cars: [],
   isLoading: false,
@@ -15,6 +13,8 @@ const initialState = {
   isUpdated: false,
   displayedCars: [],
   removedCars: [],
+  isCreated: false,
+  isCreatedError: null,
 };
 
 export const getCars = createAsyncThunk("cars/getCars", async (_, thunkAPI) => {
@@ -63,6 +63,7 @@ export const addCar = createAsyncThunk(
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            Authorization: getLocalStorageAuth(),
           },
         },
       );
@@ -80,6 +81,11 @@ export const deleteCar = createAsyncThunk(
     try {
       const response = await axios.delete(
         `${API_URL}/users/${userId}/cars/${carId}`,
+        {
+          headers: {
+            Authorization: getLocalStorageAuth(),
+          },
+        },
         {
           data: {
             id: carId,
@@ -100,6 +106,11 @@ export const getCarById = createAsyncThunk(
     try {
       const response = await axios.get(
         `${API_URL}/users/${userId}/cars/${carId}`,
+        {
+          headers: {
+            Authorization: getLocalStorageAuth(),
+          },
+        },
       );
       return response;
     } catch (error) {
@@ -146,11 +157,13 @@ const carsSlice = createSlice({
     },
     [addCar.fulfilled]: (state, action) => {
       state.isLoading = false;
+      state.isCreated = true;
       state.cars = action.payload.status.data;
     },
     [addCar.rejected]: (state, action) => {
       state.isLoading = false;
-      state.error = action.payload;
+      state.isCreatedError = action.payload;
+      state.isCreated = false;
     },
     [getCarById.pending]: (state) => {
       state.isLoading = true;

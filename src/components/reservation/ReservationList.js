@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getReservations } from "../../redux/reservations/reservationSlice";
 import { getCars } from "../../redux/cars/carsSlice";
 
-function ReservationList() {
+const ReservationList = () => {
   const { userId } = useSelector((state) => state.login);
   const { reservations, isLoading, isError } = useSelector(
     (state) => state.reservations,
@@ -47,6 +47,6 @@ function ReservationList() {
   }
 
   return <p>No reservations available</p>;
-}
+};
 
 export default ReservationList;
