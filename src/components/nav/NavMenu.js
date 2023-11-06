@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { UilTwitter, UilFacebookF, UilSignout } from "@iconscout/react-unicons";
@@ -15,6 +15,10 @@ const NavMenu = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (document.body.clientWidth <= 750) toggleMenu();
+  }, []);
 
   const signout = () => {
     localStorage.removeItem("authKey");
