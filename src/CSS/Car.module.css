@@ -1,0 +1,46 @@
+.car {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  align-items: center;
+  text-align: center;
+  width: 350px;
+  height: 450px;
+}
+
+.carImg {
+  width: 100%;
+  cursor: pointer;
+}
+
+.carDetailsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  cursor: pointer;
+}
+
+.carName {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.carDescription {
+  color: #c7c9c8;
+  text-transform: capitalize;
+}
+
+.carSocialBox {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.carSocialBox > img {
+  width: 30px;
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid #c7c9c8;
+  cursor: pointer;
+}

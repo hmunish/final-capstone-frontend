@@ -1,0 +1,40 @@
+.sidebarMenu {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 75%;
+}
+
+.navigation {
+  width: 75%;
+}
+
+.navlist {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 17, 17);
+}
+
+.navlist a {
+  display: inline-block;
+  width: 100%;
+  padding: 11px;
+}
+
+.activeLink {
+  background-color: #97bf0f;
+  color: #fff;
+}

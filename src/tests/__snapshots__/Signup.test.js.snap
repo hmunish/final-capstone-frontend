@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Car Details components Match 1`] = `
+<section
+  className="signup"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="text-input"
+      name="username"
+      placeholder="Username"
+      type="text"
+    />
+    <input
+      className="form-submit"
+      type="submit"
+      value="Sign Up"
+    />
+  </form>
+  <a
+    className="form-switch-link"
+    href="/signin"
+    onClick={[Function]}
+  >
+    Already a user? Sign In
+  </a>
+</section>
+`;

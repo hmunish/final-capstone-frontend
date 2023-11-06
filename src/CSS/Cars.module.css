@@ -1,0 +1,46 @@
+.carsSection {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  overflow-x: hidden;
+  overflow-y: unset;
+}
+
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.titleBox > * {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.titleBox > h2 {
+  letter-spacing: 11px;
+}
+
+.titleBox > p {
+  color: #c7c9c8;
+  font-size: 0.9rem;
+}
+
+.cars {
+  width: 70%;
+  display: flex;
+  gap: 25px;
+  transition: all 1s;
+}
+
+.dblock {
+  display: block;
+}
+
+.dnone {
+  display: none;
+}

@@ -1,0 +1,382 @@
+:root {
+  --color-bg-1: #ffb400;
+  --color-bg-2: #97bf0f;
+  --color-white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+section.login,
+section.signup {
+  width: 100%;
+  height: 100vh;
+  background: var(--color-bg-1) url(./assets/cars-bg-home.png) center no-repeat;
+  background-size: contain;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 7px;
+}
+
+section.login > form,
+section.signup > form {
+  display: flex;
+}
+
+.text-input {
+  width: 250px;
+  height: 50px;
+  padding: 25px;
+  border: none;
+  outline: none;
+  border-bottom-left-radius: 11px;
+  font-size: 16px;
+}
+
+.form-submit {
+  height: 100%;
+  padding: 15px;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  background-color: var(--color-bg-2);
+}
+
+.form-switch-link {
+  color: var(--color-white);
+}
+
+main {
+  display: flex;
+}
+
+.sidebar {
+  z-index: 15;
+}
+
+.mobmenu {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: 30px;
+  z-index: 5;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobmenu > img {
+  width: 100%;
+}
+
+div.signout {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+div.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+/* Add reservation page starts here */
+
+section.add-reservation,
+section.reservation-list,
+section.add-new-car,
+section.delete-cars-list {
+  width: 100%;
+  height: 100vh;
+  background: url(./assets/cars-bg-home.png) center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.green-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #96bf0ff3;
+}
+
+section.add-reservation > .wrapper,
+section.reservation-list > table {
+  width: 50%;
+  min-width: 500px;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  section.add-reservation > .wrapper,
+  section.reservation-list > table {
+    width: 90%;
+    min-width: 90%;
+  }
+}
+
+section.add-reservation > .wrapper > h2 {
+  text-transform: uppercase;
+  letter-spacing: 11px;
+}
+
+section.add-reservation > .wrapper > hr {
+  width: 90%;
+  height: 3px;
+  border-radius: 50%;
+}
+
+.reservation-form {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  gap: 5px;
+}
+
+.reservation-form > * {
+  flex-grow: 1;
+  background: none;
+  border: 3px solid #fff;
+  color: #fff;
+  border-radius: 16px;
+  padding: 5px;
+}
+
+.reservation-form option {
+  color: #000;
+}
+
+.reservation-form > input[type="submit"] {
+  background-color: var(--color-white);
+  color: var(--color-bg-2);
+  cursor: pointer;
+}
+
+/* Add reservation page ends here */
+
+/* Reservation list starts here */
+section.reservation-list > table {
+  display: table;
+  border-collapse: collapse;
+}
+
+section.reservation-list > table td,
+th {
+  border: 1px solid #fff;
+  padding: 5px;
+}
+
+/* Reservation list ends here */
+
+/* Car details starts here */
+section.car-details {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+section.car-details > .back-btn {
+  position: absolute;
+  padding: 15px 35px;
+  background-color: var(--color-bg-2);
+  bottom: 25px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+section.car-details > .back-btn > img {
+  width: 15px;
+  transform: rotateZ(180deg);
+}
+
+div.car-details-img {
+  flex-basis: 70%;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.add-car-form,
+.cars-to-delete {
+  z-index: 10;
+  border: 2px solid rgb(255, 255, 255);
+  width: 60%;
+  margin: 1rem auto;
+  border-radius: 2%;
+}
+
+.form-ul {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  list-style-type: none;
+  margin: 1rem;
+  color: #fff;
+}
+
+.form-li label {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 0.3rem;
+}
+
+.form-li input {
+  border: 0;
+  border-radius: 2px;
+  padding: 1%;
+}
+
+.form-ul > input,
+.delete-btn {
+  margin-top: 1%;
+  padding: 2%;
+  border-radius: 2px;
+  border: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.form-ul > input:hover,
+.delete-btn:hover {
+  color: #97bf0f;
+  background-color: #fff;
+}
+
+.delete-title {
+  margin: 3%;
+  color: #fff;
+}
+
+.delete-car-item {
+  margin: 3%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3%;
+  color: #fff;
+  border: 2px solid white;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 750px) {
+  div.car-details-img {
+    background-size: 500px;
+  }
+
+  .sidebar {
+    position: fixed;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.car-details-img {
+    background-size: contain;
+  }
+}
+
+div.car-details {
+  min-width: 250px;
+  flex-basis: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* background-color: aqua; */
+}
+
+.car-details-list {
+  list-style: none;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.car-details-list > li {
+  padding: 15px 5px;
+  background-color: #e2e2e2;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.car-details-list > li:nth-child(odd) {
+  background-color: var(--color-white);
+}
+
+div.car-details > .wrapper {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+div.car-details > .wrapper > h1 {
+  font-size: 2.5rem;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+div.car-details > .wrapper > p {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+div.car-details > .wrapper > h3 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+div.car-details > .wrapper > h3 > span {
+  font-weight: bold;
+}
+
+.discover-more {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  text-align: right;
+  margin-top: 25px;
+  font-weight: 1000;
+}
+
+.discover-more::after {
+  content: ">";
+  color: var(--color-bg-1);
+  padding: 0 5px;
+}
+
+.reserve-btn {
+  width: 90%;
+  border-radius: 16px;
+  color: var(--color-white);
+  text-align: center;
+  align-self: flex-end;
+  padding: 15px;
+  background-color: var(--color-bg-2);
+}
+
+.colors-img {
+  width: 100px;
+  align-self: flex-end;
+  margin: 5px 0;
+}
+
+/* Car details ends here */
