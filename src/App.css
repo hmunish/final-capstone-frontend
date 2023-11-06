@@ -56,7 +56,7 @@ main {
 }
 
 .sidebar {
-  z-index: 5;
+  z-index: 15;
 }
 
 .mobmenu {
